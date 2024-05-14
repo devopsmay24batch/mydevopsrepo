@@ -1,5 +1,5 @@
-#my second file to my repo
-#java code goes here
+//my second file to my repo
+//java code goes here
 class HelloWorld
 {
     public static void main(String []args)
