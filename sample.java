@@ -1,5 +1,4 @@
-//my second file to my repo
-//java code goes here
+//my jenkins sample java file
 class HelloWorld
 {
     public static void main(String []args)
