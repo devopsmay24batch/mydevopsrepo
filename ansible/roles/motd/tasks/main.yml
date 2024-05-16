@@ -1,0 +1,10 @@
+---
+# tasks file for demomotd
+# tasks file for demor
+- name: copy motd file
+  template:
+    src: templates/motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: 0444
