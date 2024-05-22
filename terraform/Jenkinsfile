@@ -36,7 +36,6 @@ pipeline {
                 sh 'terraform apply "tfplan"'
             }
         }
-    }
 
     post {
         always {
