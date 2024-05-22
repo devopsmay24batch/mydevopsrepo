@@ -8,9 +8,9 @@
       src: /etc/hosts
       dest: /tmp/hosts_backup
       mode: '0644'
-  - name: Add the user 'devopsuser'
+  - name: Add the user 'devopsuser2'
     ansible.builtin.user:
-      name: devopsuser
+      name: devopsuser2
     become: yes
     become_method: sudo
   - name: Upgrade all apt packages (equivalent to apt-get update)
