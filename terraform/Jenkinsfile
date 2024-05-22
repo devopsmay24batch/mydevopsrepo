@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Initialize Terraform
 		sh 'pwd'
-		sh 'cd terraform;'
+		sh 'cd /home/apskarthickgmai/mygitrepos/mydevopsrepo/terraform'
                 sh 'terraform init'
             }
         }
