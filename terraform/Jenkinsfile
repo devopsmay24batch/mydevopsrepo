@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define environment variables
+        TF_VAR_FILE = "terraform.tfvars"
+        TF_CLI_CONFIG_FILE = "$HOME/.terraformrc"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the version control system
+                git 'https://your-repo-url.git'
+            }
+        }
+
+        stage('Terraform Init') {
+            steps {
+                // Initialize Terraform
+                sh 'terraform init'
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                // Run Terraform plan and save the output to a file
+                sh 'terraform plan -var-file=$TF_VAR_FILE -out=tfplan'
+            }
+        }
+
+        stage('Approve') {
+            steps {
+                // Wait for manual approval
+                input message: 'Do you want to apply the changes?', ok: 'Apply'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                // Apply the Terraform plan
+                sh 'terraform apply "tfplan"'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up the workspace
+            cleanWs()
+        }
+    }
+}
