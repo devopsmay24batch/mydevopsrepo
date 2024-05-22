@@ -41,7 +41,7 @@ pipeline {
     post {
         always {
             // Clean up the workspace
-            cleanWs()
+            //cleanWs()
         }
     }
 }
