@@ -7,13 +7,6 @@ pipeline {
         TF_CLI_CONFIG_FILE = "$HOME/.terraformrc"
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the code from the version control system
-                git 'https://github.com/devopsmay24batch/mydevopsrepo.git'
-            }
-        }
 
         stage('Terraform Init') {
             steps {
