@@ -78,7 +78,7 @@ pipeline {
                 // Apply the Terraform plan
 		sh '''
 		   cd terraform
-                   terraform destroy -no-color
+                   terraform destroy -auto-approve -no-color
 		'''
             }
         }
