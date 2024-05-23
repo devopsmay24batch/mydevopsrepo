@@ -66,7 +66,7 @@ pipeline {
         }
             steps {
                 // Wait for manual approval
-                input message: 'Do you want to apply the changes?', ok: 'Apply'
+                input message: 'Do you want to run destroy?', ok: 'Apply'
             }
         }
 
@@ -78,7 +78,7 @@ pipeline {
                 // Apply the Terraform plan
 		sh '''
 		   cd terraform
-                   terraform destroy "tfplan" -no-color
+                   terraform destroy -no-color
 		'''
             }
         }
