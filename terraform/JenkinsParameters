@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define environment variables
+        TF_VAR_FILE = "terraform.tfvars"
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+	      AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+	      AWS_SESSION_TOKEN = credentials('AWS_SESSION_TOKEN')
+    }
+
+    stages {
+
+        when {
+                expression { params.init == 'yes' }
+            }
+        stage('Terraform Init') {
+            steps {
+                // Initialize Terraform
+		        sh '''
+		          pwd
+      		    cd terraform
+		          terraform init -no-color
+		        '''
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                // Run Terraform plan and save the output to a file
+		sh '''
+		   cd terraform
+		   terraform plan -out=tfplan -no-color
+     		'''
+  		
+            }
+        }
+
+        stage('Approve') {
+            steps {
+                // Wait for manual approval
+                input message: 'Do you want to apply the changes?', ok: 'Apply'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                // Apply the Terraform plan
+		sh '''
+		   cd terraform
+                   terraform apply "tfplan" -no-color
+		'''
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up the workspace
+            //cleanWs()
+	    sh 'echo All done'
+        }
+    }
+}
