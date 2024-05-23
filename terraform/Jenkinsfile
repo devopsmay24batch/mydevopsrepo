@@ -4,7 +4,9 @@ pipeline {
     environment {
         // Define environment variables
         TF_VAR_FILE = "terraform.tfvars"
-        //TF_CLI_CONFIG_FILE = "$HOME/.terraformrc"
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+	AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+	AWS_SESSION_TOKEN = credentials('AWS_SESSION_TOKEN')
     }
 
     stages {
