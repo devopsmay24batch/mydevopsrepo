@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define environment variables
         TF_VAR_FILE = "terraform.tfvars"
-        TF_CLI_CONFIG_FILE = "$HOME/.terraformrc"
+        //TF_CLI_CONFIG_FILE = "$HOME/.terraformrc"
     }
 
     stages {
@@ -20,7 +20,8 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 // Run Terraform plan and save the output to a file
-		sh 'terraform plan -var-file=$TF_VAR_FILE -out=tfplan'
+		sh 'pwd'
+		sh 'terraform plan -out=tfplan'
             }
         }
 
