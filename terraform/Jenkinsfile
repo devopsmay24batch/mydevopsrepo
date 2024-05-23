@@ -16,7 +16,7 @@ pipeline {
 		sh '''
 		    pwd
       		    cd terraform
-		    terraform init
+		    terraform init -no-color
 		'''
             }
         }
@@ -44,7 +44,7 @@ pipeline {
                 // Apply the Terraform plan
 		sh '''
 		   cd terraform
-                   terraform apply "tfplan"
+                   terraform apply "tfplan" -no-color
 		'''
             }
         }
