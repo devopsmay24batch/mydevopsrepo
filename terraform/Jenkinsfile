@@ -26,7 +26,7 @@ pipeline {
                 // Run Terraform plan and save the output to a file
 		sh '''
 		   cd terraform
-		   terraform plan -out=tfplan
+		   terraform plan -out=tfplan -no-color
      		'''
   		
             }
