@@ -13,7 +13,7 @@ pipeline {
         stage('Terraform Init') {
         when {
                 expression { params.init == 'yes' }
-            }
+        }
         steps {
                 // Initialize Terraform
 		        sh '''
@@ -25,6 +25,9 @@ pipeline {
         }
 
         stage('Terraform Plan') {
+        when {
+                expression { params.action != 'destroy' }
+        }
             steps {
                 // Run Terraform plan and save the output to a file
 		sh '''
@@ -36,6 +39,9 @@ pipeline {
         }
 
         stage('Approve') {
+        when {
+                expression { params.action != 'destroy' }
+        }
             steps {
                 // Wait for manual approval
                 input message: 'Do you want to apply the changes?', ok: 'Apply'
@@ -43,11 +49,36 @@ pipeline {
         }
 
         stage('Terraform Apply') {
+        when {
+                expression { params.action != 'destroy' }
+        }
             steps {
                 // Apply the Terraform plan
 		sh '''
 		   cd terraform
                    terraform apply "tfplan" -no-color
+		'''
+            }
+        }
+        stage('Destroy') {
+        when {
+                expression { params.action == 'destroy' }
+        }
+            steps {
+                // Wait for manual approval
+                input message: 'Do you want to apply the changes?', ok: 'Apply'
+            }
+        }
+
+        stage('Terraform Destroy') {
+        when {
+                expression { params.action == 'destroy' }
+        }
+            steps {
+                // Apply the Terraform plan
+		sh '''
+		   cd terraform
+                   terraform destroy "tfplan" -no-color
 		'''
             }
         }
