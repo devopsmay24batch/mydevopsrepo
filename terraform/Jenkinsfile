@@ -13,6 +13,7 @@ pipeline {
                 // Initialize Terraform
 		sh '''
 		    pwd
+      		    cd terraform
 		    terraform init
 		'''
             }
