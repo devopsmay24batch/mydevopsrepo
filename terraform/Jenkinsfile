@@ -21,6 +21,7 @@ pipeline {
             steps {
                 // Run Terraform plan and save the output to a file
 		sh 'pwd'
+		sh 'cd /home/apskarthickgmai/mygitrepos/mydevopsrepo/terraform'
 		sh 'terraform plan -out=tfplan'
             }
         }
@@ -35,6 +36,8 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 // Apply the Terraform plan
+		sh 'pwd'
+		sh 'cd /home/apskarthickgmai/mygitrepos/mydevopsrepo/terraform'
                 sh 'terraform apply "tfplan"'
             }
         }
