@@ -10,12 +10,11 @@ pipeline {
     }
 
     stages {
-
+        stage('Terraform Init') {
         when {
                 expression { params.init == 'yes' }
             }
-        stage('Terraform Init') {
-            steps {
+        steps {
                 // Initialize Terraform
 		        sh '''
 		          pwd
