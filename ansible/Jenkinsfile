@@ -16,7 +16,11 @@ pipeline {
                     sh 'export PATH=$PATH:/path/to/ansible'
 
                     // Run the playbook
-                    sh 'ansible-playbook demomotd-role.yaml -check -v'
+                    sh '''
+                        cd ansible
+                        pwd
+                        ansible-playbook demomotd-role.yaml -check -v
+                    '''
                 }
             }
         }
