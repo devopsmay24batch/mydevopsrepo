@@ -30,8 +30,11 @@ pipeline {
                     // Ensure Ansible is in the PATH
                     sh 'export PATH=$PATH:/path/to/ansible'
 
-                    // Run the playbook
-                    sh 'ansible-playbook demomotd-role.yaml -v'
+                    sh '''
+                        cd ansible
+                        pwd
+                        ansible-playbook demomotd-role.yaml -v
+                    '''
                 }
             }
         }
