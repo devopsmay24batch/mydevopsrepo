@@ -19,7 +19,7 @@ pipeline {
                     sh '''
                         cd ansible
                         pwd
-                        ansible-playbook demomotd-role.yaml -check -v
+                        ansible-playbook demomotd-role.yaml --check -v
                     '''
                 }
             }
@@ -31,7 +31,7 @@ pipeline {
                     sh 'export PATH=$PATH:/path/to/ansible'
 
                     // Run the playbook
-                    sh 'ansible-playbook demomotd-role.yaml'
+                    sh 'ansible-playbook demomotd-role.yaml -v'
                 }
             }
         }
