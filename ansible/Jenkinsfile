@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Assuming you have your Ansible playbook in a SCM like Git
+                //Ansible playbook in this repo under ansible directory
                 checkout scm
             }
         }
@@ -20,6 +20,7 @@ pipeline {
                         cd ansible
                         pwd
                         ansible-playbook demomotd-role.yaml --check -v
+                        //check is to do the dry-run without any changes.
                     '''
                 }
             }
@@ -34,6 +35,7 @@ pipeline {
                         cd ansible
                         pwd
                         ansible-playbook demomotd-role.yaml -v
+                        //this step will run only dry run is successful.
                     '''
                 }
             }
