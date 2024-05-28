@@ -1,0 +1,51 @@
+- hosts: webservers
+  become: true
+  tasks:
+    - name: install dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - lsb-release
+          - gnupg
+        state: latest
+        update_cache: yes
+    - name: add docker's official GPG key
+      shell: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o \ 
+/usr/share/keyrings/docker-archive-keyring.gpg"
+    - name: add deb repository docker
+      shell: echo "\"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
+    - name: install docker
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: latest
+        update_cache: yes
+    - name: adding users to group docker
+      user:
+        name: '{{ item }}'
+        groups: docker
+        append: yes
+      loop:
+        - apskarthickgmai
+        #- user2
+    - name: Install docker-compose
+      get_url:
+        url : https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: '755'
+    - name: checking docker version
+      shell: docker --version
+      register: dockerversion
+
+    - debug: var=dockerversion.stdout_lines  
+
+    - name: checking docker compose version
+      shell: docker-compose --version
+      register: dockercomposeversion
+
+    - debug: var=dockercomposeversion.stdout_lines
+
