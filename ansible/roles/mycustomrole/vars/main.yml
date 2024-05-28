@@ -1,0 +1,4 @@
+---
+# vars file for mycustomrole
+default_unix_group: ansible
+myanothervar_timeout: 300 
