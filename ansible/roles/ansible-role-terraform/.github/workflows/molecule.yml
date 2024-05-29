@@ -1,0 +1,68 @@
+name: molecule
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 18 * * sun'
+
+jobs:
+  build:
+    name: ${{ matrix.image }} terraform ${{ matrix.terraform_version }}
+    runs-on: ubuntu-22.04
+    env:
+      docker_namepsace: ghcr.io/diodonfrost/docker-ansible
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - almalinux:8
+          - rockylinux:8
+          - centos:7
+          - fedora:39
+          - fedora:38
+          - fedora:37
+          - fedora:36
+          - ubuntu:22.04
+          - ubuntu:20.04
+          - debian:11
+          - debian:10
+          - oraclelinux:9
+          - oraclelinux:8
+          - amazonlinux:2
+          - opensuse:leap
+          - opensuse:tumbleweed
+          - archlinux:latest
+          - alpine:latest
+          - gentoo:latest
+        terraform_version:
+          - latest
+          - 1.4.0
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install Molecule
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Test Ansible role
+        run: molecule test
+        env:
+          namespace: ${{ env.docker_namepsace }}
+          image: ansible-${{ matrix.image }}
+          terraform_version: ${{ matrix.terraform_version }}
+
+      - name: Test Ansible role with check_mode enable
+        run: molecule check
+        env:
+          namespace: ${{ env.docker_namepsace }}
+          image: ansible-${{ matrix.image }}
+          terraform_version: ${{ matrix.terraform_version }}
