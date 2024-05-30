@@ -2,6 +2,11 @@
 - hosts: webservers
   become: yes
   tasks:
+    - name: Uninstall containerd.io
+      apt:
+        name: containerd.io
+        state: absent
+
     - name: Install Docker
       apt:
         name: docker.io
@@ -22,9 +27,7 @@
         state: absent
 
     - name: Make sure containerd is restarted
-      ansible.builtin.systemd_service:
-        state: started
-        name: containerd
+      ansible.builtin.command:  systemctl restart containerd
 
     - name: Initialize Kubernetes master
       command: kubeadm init --pod-network-cidr=10.244.0.0/16
