@@ -2,14 +2,14 @@
 - hosts: webservers
   become: yes
   tasks:
-    - name: Uninstall containerd.io
-      apt:
-        name: containerd.io
-        state: absent
-
-    - name: Install Docker
+    - name: Uninstall docker.io
       apt:
         name: docker.io
+        state: absent
+
+    - name: Install containerd
+      apt:
+        name: containerd.io
         state: present
 
     - name: Install kubeadm, kubelet, and kubectl
@@ -21,10 +21,14 @@
         - kubelet
         - kubectl
 
-    - name: Remove the containerd config file
-      ansible.builtin.file:
-        path: /etc/containerd/config.toml
-        state: absent
+    - name: Initialize containerd directory
+      ansible.builtin.command:  mkdir -p /etc/containerd/
+
+    - name: Initialize containerd config
+      ansible.builtin.command:  containerd config default | sudo tee /etc/containerd/config.toml
+
+    - name: Change this parameter - to use containerd as the runtime for Kubernetes, configure the systemd cgroup driver for runC
+      ansible.builtin.command:  sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 
     - name: Make sure containerd is restarted
       ansible.builtin.command:  systemctl restart containerd
@@ -40,10 +44,13 @@
         - "mkdir -p $HOME/.kube"
         - "cp /etc/kubernetes/admin.conf $HOME/.kube/config"
         - "chown $(id -u):$(id -g) $HOME/.kube/config"
+      environment:
+        HOME: /home/{{ ansible_user_id }}
+      # if this step fails, run the command locally without sudo
 
     - name: Install Calico network plugin
       command: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
-      when: "'calico' in kubeadm_output.stdout"
+        #when: "'calico' in kubeadm_output.stdout"
 
 - hosts: webservers
   become: yes
