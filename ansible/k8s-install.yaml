@@ -46,7 +46,8 @@
         - "chown $(id -u):$(id -g) $HOME/.kube/config"
       environment:
         HOME: /home/{{ ansible_user_id }}
-      # if this step fails, run the command locally without sudo
+      # if this step fails, run the command locally without sudo; so added ignore errors for this step
+      ignore_errors: yes
 
     - name: Install Calico network plugin
       command: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
