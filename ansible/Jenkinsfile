@@ -16,12 +16,12 @@ pipeline {
                     sh 'export PATH=$PATH:/path/to/ansible'
 
                     // Run the playbook
-                     //check is to do the dry-run without any changes.
+                    //check is to do the dry-run without any changes.
+
                     sh '''
                         cd ansible
                         pwd
                         ansible-playbook demomotd-role.yaml --check -v
-                       
                     '''
                 }
             }
@@ -31,13 +31,13 @@ pipeline {
                 script {
                     // Ensure Ansible is in the PATH
                     sh 'export PATH=$PATH:/path/to/ansible'
-
-                     //this step will run only dry run is successful.
+                  
+                    //this step will run only dry run is successful.
                     sh '''
                         cd ansible
                         pwd
                         ansible-playbook demomotd-role.yaml -v
-                       
+
                     '''
                 }
             }

@@ -1,0 +1,75 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Uninstall docker.io
+      apt:
+        name: docker.io
+        state: absent
+
+    - name: Install containerd
+      apt:
+        name: containerd.io
+        state: present
+
+    - name: Install kubeadm, kubelet, and kubectl
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - kubeadm
+        - kubelet
+        - kubectl
+
+    - name: Initialize containerd directory
+      ansible.builtin.command:  mkdir -p /etc/containerd/
+
+    - name: Initialize containerd config
+      ansible.builtin.command:  containerd config default | sudo tee /etc/containerd/config.toml
+
+    - name: Change this parameter - to use containerd as the runtime for Kubernetes, configure the systemd cgroup driver for runC
+      ansible.builtin.command:  sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+
+    - name: Make sure containerd is restarted
+      ansible.builtin.command:  systemctl restart containerd
+
+    - name: Initialize Kubernetes master
+      command: kubeadm init --pod-network-cidr=10.244.0.0/16
+      register: kubeadm_output
+      ignore_errors: yes
+
+    - name: Set up kubectl for the current user
+      command: "{{ item }}"
+      with_items:
+        - "mkdir -p $HOME/.kube"
+        - "cp /etc/kubernetes/admin.conf $HOME/.kube/config"
+        - "chown $(id -u):$(id -g) $HOME/.kube/config"
+      environment:
+        HOME: /home/{{ ansible_user_id }}
+      # if this step fails, run the command locally without sudo; so added ignore errors for this step
+      ignore_errors: yes
+
+    - name: Install Calico network plugin
+      command: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+        #when: "'calico' in kubeadm_output.stdout"
+
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Install kubeadm, kubelet, and kubectl
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - kubeadm
+        - kubelet
+        - kubectl
+
+          #    - name: Join worker nodes to the cluster
+          #command: "{{ hostvars['master']['kubeadm_output']['stdout_lines'][0] }}"
+          #when: "'kubeadm join' in hostvars['master']['kubeadm_output']['stdout']"
