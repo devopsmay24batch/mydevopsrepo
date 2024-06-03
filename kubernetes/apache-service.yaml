@@ -1,8 +1,8 @@
-# nginx-service.yaml
+# httpd-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: httpd-service
 spec:
   type: NodePort
   selector:
