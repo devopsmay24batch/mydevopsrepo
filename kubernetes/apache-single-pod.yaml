@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: httpd
+  name: apache-single-pod
   labels:
-    env: dev
+    app: apache-single
 spec:
   containers:
   - name: httpd
