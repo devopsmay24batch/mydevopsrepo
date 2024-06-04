@@ -4,12 +4,12 @@ kind: ConfigMap
 metadata:
   name: apache-config
 data:
-  custompage.html: |
+  index.html: |
     <html>
     <head><title>Apache Pod</title></head>
     <body>
       <h1>Welcome to Apache - This is the custom page example to display container hostname!</h1>
-      <p> Container Host Name: {{ .Env.HOSTNAME }}</p>
+      <p> Container Host Name: $HOSTNAME </p>
     </body>
     </html>
 
@@ -34,26 +34,35 @@ spec:
     spec:
       initContainers:
       - name: init-apache
-        image: busybox
-        command: ['sh', '-c', 'cp /config/index.html /usr/local/apache2/htdocs/']
+        image: alpine:3.10
+        command:
+          - /bin/sh
+          - -c
+          - |
+            apk add --no-cache gettext
+            echo "Copying index.html"
+            cat /config/index.html
+            envsubst < /config/index.html > /usr/local/apache2/htdocs/index.html
+            ls -l /usr/local/apache2/htdocs
+            cat /usr/local/apache2/htdocs/index.html
         volumeMounts:
         - name: apache-config-volume
           mountPath: /config
         - name: apache-web-content
           mountPath: /usr/local/apache2/htdocs
-      containers:
-      - name: apache
-        image: httpd:2.4
-        ports:
-        - containerPort: 80
         env:
         - name: HOSTNAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+      containers:
+      - name: apache
+        image: httpd:2.4
+        ports:
+        - containerPort: 80
         volumeMounts:
-        - name: apache-config-volume
-          mountPath: /usr/local/apache2/htdocs/
+        - name: apache-web-content
+          mountPath: /usr/local/apache2/htdocs
       volumes:
       - name: apache-config-volume
         configMap:
