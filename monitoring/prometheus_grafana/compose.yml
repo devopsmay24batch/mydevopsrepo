@@ -1,7 +1,7 @@
 version: '3'
 services:
   cadvisor:
-      image: gcr.io/cadvisor/cadvisor:v0.47.1
+      image: gcr.io/cadvisor/cadvisor:latest
       hostname: cadvisor
       platform: linux/amd64
       volumes:
@@ -12,13 +12,17 @@ services:
         - "/dev/disk/:/dev/disk:ro"
       ports:
         - "58080:8080"
-  
+      networks:
+        - monitoring
+
   prometheus:
     image: prom/prometheus
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus-scrape-config.yaml
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
+    networks:
+      - monitoring
   
   grafana:
     image: grafana/grafana
@@ -31,4 +35,12 @@ services:
     volumes:
       - ./grafana-datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml
     ports:
-      - "9100:3000"
+      - "9200:3000"
+    networks:
+      - monitoring
+
+volumes:
+  grafana-storage:
+
+networks:
+  monitoring:
