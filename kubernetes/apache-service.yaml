@@ -1,12 +1,12 @@
-# nginx-service.yaml
+# httpd-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: apache-service
 spec:
   type: NodePort
   selector:
-    env: dev
+    app: apache-single
   ports:
   - protocol: TCP
     port: 80

@@ -1,0 +1,3 @@
+http:/localhost, works!
+http://localhost, notfound!
+http://localhost:38080, works!

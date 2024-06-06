@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: apache-single-pod
   labels:
-    env: dev
+    app: apache-single
 spec:
   containers:
-  - name: nginx
-    image: nginx
+  - name: httpd
+    image: httpd
     imagePullPolicy: IfNotPresent
   tolerations:
   - key: "node-role.kubernetes.io/control-plane"
