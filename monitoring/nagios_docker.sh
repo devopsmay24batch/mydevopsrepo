@@ -10,7 +10,9 @@ docker run --name nagios4 -p 0.0.0.0:8081:80 jasonrivers/nagios:latest
 
 #access the nagios console using http://localhost:8080
 #username: nagiosadmin
-#password: nagiosadmin or try admin
+#password: nagios
+
+#For reference - go to this docker hub url https://hub.docker.com/r/jasonrivers/nagios
 
 
 #Enjoy learning Nagios without having to go through complex process
