@@ -1,0 +1,112 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+PC :
+    name            : PC
+    deviceType      : server
+    platform        : centos
+    username        : root
+    password        : 'AAbb1234!!'
+    rootUserName    : root
+    rootPassword    : 'AAbb1234!!'
+    scpUsername     : 'root'
+    scpPassword     : 'AAbb1234!!'
+    managementIP    : 192.168.101.20
+    managementIPV6  : 'fe80::1618:77ff:fe4b:393b'
+    staticIPV6      : 'fe80::1618:77ff:fe4b:393b'
+    prompt          : 'root@localhost'
+UUT :
+    name    : Nebula_Gen2F
+    os      : centos
+    deviceType      : DUT
+    consoleIP       : 10.204.125.64   # ESM A
+    consolePort     : 8005            # ESM A
+    esmbConsoleIP   : 10.204.125.64   # ESM B
+    esmbConsolePort : 8006            # ESM B
+    bmcConsoleIP    : 10.204.125.64
+    bmcConsolePort  : 8005
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '111111'
+    bmcUserName:  root
+    bmcPassword: '111111'
+    managementIP    : 192.168.101.41
+    esmbManagementIP: 192.168.101.41
+    managementMask  : 255.255.254.0
+    platform         : whitebox
+    managementInterface : eth0
+    powerCycler: powerCycler1
+    powerCyclerPort : ['.AA3']
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost'
+    # promptDiagOS    : 'ESM A'
+    promptGrub      : Grub
+    promptBmc       : 'root@localhost'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'localhost login:'
+    loginPromptESM  : 'Username: '
+    ESMUserName     : 'system_debug'
+    ESMUserPassword : 'L3n0v0isg*d@t@C3nt3rGrp!'
+    ESMprompt       : 'ESM\s\w\s.*#'
+    bmcIP           : 10.204.125.64
+    platformType    : 'Nebula_Gen2F'
+    platformRev     : '0102'
+    enclosureLogicalIdentifier: '500e0eca0663dcfc'    
+tyr_se :
+    name    : tyr_se
+    os      : centos
+    deviceType      : DUT
+    consoleIP       : 10.204.112.120
+    consolePort     : 9003
+    bmcConsoleIP    : 10.204.112.120
+    bmcConsolePort  : 9003
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '111111'
+    bmcUserName:  root
+    bmcPassword: '111111'
+    managementIP    : 10.204.113.143
+    managementMask  : 255.255.254.0
+    platform         : whitebox
+    managementInterface : enp216s0f1
+    powerCycler: powerCycler2
+    powerCyclerPort : 2
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@localhost'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'localhost login:'
+JENKINS :
+    name            : JENKINS
+    deviceType      : server
+    platform        : ubuntu
+    username        : automationtest
+    password        : '123456'
+    rootUserName    : automationtest
+    rootPassword    : '123456'
+    scpUsername     : 'automationtest'
+    scpPassword     : '123456'
+    managementIP    : 10.204.112.37
+    managementIPV6  : 'fe80::1618:77ff:fe4b:393b'
+    staticIPV6      : 'fe80::1618:77ff:fe4b:393b'
+    prompt          : 'None'

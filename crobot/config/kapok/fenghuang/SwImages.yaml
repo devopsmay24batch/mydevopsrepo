@@ -1,0 +1,157 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2020-    , Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+ONIE_Installer:
+    name            :  ONIE_Installer
+    hostImageDir    : 'R1276-J0001-01-V0.23-fenghuang-bsp/cs8200-release/image/onie'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'celestica_cs8200-r0.itb'
+    newImage        : 'celestica_cs8200-r0.itb'
+    oldVersion      : '2017.11.023'
+    newVersion      : '2017.11.023'
+
+ONIE_updater:
+    name            :  ONIE_updater
+    hostImageDir    : 'R1276-J0001-01-V0.23-fenghuang-bsp/cs8200-release/image/onie'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-arm64-celestica_cs8200-r0'
+    newImage        : 'onie-updater-arm64-celestica_cs8200-r0'
+    oldVersion      : '2017.11.023'
+    newVersion      : '2017.11.024'
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : 'R1276-J0001-01-V0.23-fenghuang-bsp/cs8200-release/image/onie'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-arm64-celestica_cs8200-r0'
+    newImage        : 'onie-updater-arm64-celestica_cs8200-r0'
+    oldVersion      :
+        SYSCPLD     : "0x0014"
+        LEDCPLD1    : "0x04"
+        LEDCPLD2    : "0x04"
+        FANCPLD     : "3"
+    newVersion      :
+        SYSCPLD     : "0x0014"
+        LEDCPLD1    : "0x04"
+        LEDCPLD2    : "0x04"
+        FANCPLD     : "3"
+
+SYS_CPLD:
+    name            :  SYS_CPLD
+    hostImageDir    : 'R1276-J0001-01-V0.24-fenghuang-bsp/cs8200-release/tools/vmetool'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/root/vmetool'
+    imageServer     : PC
+    oldImage        : 'fenghuang_sys_cpld_v14.vme'
+    newImage        : 'fenghuang_sys_cpld_v14.vme'
+    oldVersion      : '0x14'
+    newVersion      : '0x14'
+
+FAN_CPLD:
+    name            :  FAN_CPLD
+    hostImageDir    : 'R1276-J0001-01-V0.24-fenghuang-bsp/cs8200-release/tools/vmetool'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/root/vmetool'
+    imageServer     : PC
+    oldImage        : 'fan_cpld_r02_3.vme'
+    newImage        : 'fan_cpld_r02_3.vme'
+    oldVersion      : '0x03'
+    newVersion      : '0x03'
+
+UBOOT:
+    name            :  UBOOT
+    hostImageDir    : 'R1276-J0001-01-V0.24-fenghuang-bsp/cs8200-release/image/uboot'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root/SwImages/UBOOT
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'celestica_cs8200-boot.img'
+    oldVersion      : 'U-Boot 2015.07-alpine_db-v3.47.129-HAL (Nov 09 2020 - 20:58:41 -0500) - ONIE 2017.11.023'
+    newVersion      : 'U-Boot 2018.05-alpine_db-v3.65.1-HAL (Mar 09 2021 - 09:54:38 +0000) - ONIE 2017.11.023'
+
+BSP_DRIVER:
+    name            :  BSP_DRIVER
+    hostImageDir    : /var/lib/tftpboot/BSP_DRIVER
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/driver'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'driver-1.1.10.tar.xz'
+    oldVersion      : ''
+    newVersion      : '1.1.10'
+
+DIAGOS:
+    name            :  DIAGOS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/mnt'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ['real_rootfs_v0.29_FH-64bitSDK.cpio.gz', 'celestica_cs8200-uImage', 'celestica_cs8200-r0.dtb']
+    oldVersion      : ''
+    newVersion      : ''
+
+SDK:
+    name            :  SDK
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R1276-J0003-01_V2.1.17_Fenghuang64_SDK'
+    oldVersion      : ''
+    newVersion      : '0.12.8'
+
+UC:
+    name            :  UC
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      :
+        uC_app      : "2.1.14"
+        uC_bl       : "2.28"
+    newVersion      :
+        uC_app      : "2.1.14"
+        uC_bl       : "2.28"
+
+ASC:
+    name            :  ASC
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      :
+        ASC1        : "none"
+        ASC2        : "none"
+    newVersion      :
+        ASC1        : "none"
+        ASC2        : "none"

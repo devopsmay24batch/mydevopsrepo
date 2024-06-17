@@ -1,0 +1,35 @@
+{% extends "base.j2" %}
+
+{% block title %}Thanks{% endblock %}
+
+{% block content %}
+<div class="container">
+  <br>
+  <div class="row justify-content-sm-center align-items-center">
+    <div class="col-lg-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Thanks for your reponse!</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+        {% if error %}
+          <p class=error><strong>Error:</strong> {{ error }}
+        {% else %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <li><div class="flash">{{ message }}</div>
+          {% endfor %}
+        {% else %}
+            <li>No message
+        {% endif %}
+        {% endwith %}
+        {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

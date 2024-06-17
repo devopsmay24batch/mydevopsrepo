@@ -1,0 +1,266 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BMC:
+    name            :  BMC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/BMC # the image location on the server
+    isAutoBuild     : true             # it is auto build, Jenkins task will put the new built images under hostImageDir
+    imageInfoFile   : ImageInfo.yaml   # for the auto build, Jenkins task will update the fw information in this file, and CAP script will parse fw information from this file.
+    localImageDir   : /mnt/data1/BMC   # the image location on the test unit
+    imageServer     : PC               # the server contain the images, it is defined in DeviceInfo.yaml
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+BIOS:
+    name            :  BIOS
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/BIOS
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /mnt/data1/BIOS
+    imageServer     : PC
+    oldImage        : 'XG1_3A07.bin'
+    newImage        : 'XG1_3A09.bin'
+    oldVersion      : XG1_3A07
+    newVersion      : XG1_3A09
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/CPLD
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/CPLD
+    imageServer     : PC
+    oldImage        :
+        fcm         : 'Cloudripper_FAN_CPLD_v4p2.vme'
+        scm         : 'Cloudripper_SCM_CPLD_v4p0.vme'
+        smb         : 'Cloudripper_SMB_CPLD_v1p2.vme'
+        pwr         : 'Cloudripper_PWR_CPLD_v1p0.vme'
+    newImage        :
+        fcm         : 'Cloudripper_FAN_CPLD_v4p2.vme'
+        scm         : 'Cloudripper_SCM_CPLD_v4p0.vme'
+        smb         : 'Cloudripper_SMB_CPLD_v1p2.vme'
+        pwr         : 'Cloudripper_PWR_CPLD_v1p0.vme'
+    oldVersion      :
+        fcm         : '4.2'
+        scm         : '4.0'
+        smb         : '1.2'
+        pwr         : '1.0'
+    newVersion      :
+        fcm         : '4.2'
+        scm         : '4.0'
+        smb         : '1.2'
+        pwr         : '1.0'
+
+BIC:
+    name            :  BIC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/BIC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/BIC
+    imageServer     : PC
+    oldImage        : 'xg1_snowflake_108.bin'
+    newImage        : 'xg1_snowflake_111.bin'
+    oldVersion      : 'v1.08'
+    newVersion      : 'v1.11'
+
+FPGA                :
+    name:  FPGA
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/FPGA
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/FPGA
+    imageServer     : PC
+    oldImage        : 'w400_v0100.bit'
+    newImage        : 'w400_v0101.bit'
+    oldVersion      :
+        DOMFPGA1    : '1.0'
+        DOMFPGA2    : '1.0'
+    newVersion      :
+        DOMFPGA1    : '1.1'
+        DOMFPGA2    : '1.1'
+
+TH3                 :
+    name:  TH3
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/TH3
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TH3
+    imageServer     : PC
+    oldImage        : 'TH3_PCIE_FW_02_05'
+    newImage        : 'pciefw_2.06.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.5'
+        PCIe FW version       : 'D102_08'
+    newVersion      :
+        PCIe FW loader version : '2.6'
+        PCIe FW version       : 'D102_0A'
+
+OOB                 :
+    name:  OOB
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/OOB
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/OOB
+    imageServer     : PC
+    oldImage        : 'w400_oob_eeprom_fw_v1.0.bin'
+    newImage        : 'w400_oob_eeprom_fw_v1.0.bin'
+    oldVersion      : 'v1.0'
+    newVersion      : 'v1.0'
+
+SCM                 :
+    name:  SCM
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion              :
+        Bridge-IC Version             : 'v1.09'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A07'
+        CPLD Version                  : '0x00010032'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+    newVersion              :
+        Bridge-IC Version             : 'v1.11'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A09'
+        CPLD Version                  : '0x00010032'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+
+TPM                 :
+    name:  TPM
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/TPM
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TPM
+    imageServer     : PC
+    oldImage        : 'TPM2_Test_Scripts_for_v3.0.tar.gz'
+    newImage        : 'TPM2_Test_Scripts_for_v3.0.tar.gz'
+    oldVersion      : ''
+    newVersion      : ''
+
+OS                  :
+    name:   OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '8.1.1911'
+
+KERNEL              :
+    name:   KERNEL
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '5.2.21'
+
+PSU                :
+    name:  PSU
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/PSU
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/PSU
+    imageServer     : PC
+    oldImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v3.0a_CRC_8264_18Feb2020_JC.bin'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.0a_CRC_50B2_18Feb2020_JC.bin'
+    newImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v4.0a_CRC_4D57_26Mar2019_HZ.BIN'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.2a_CRC_61E9_18Feb2020_JC.bin'
+    oldVersion      :
+        PRI_FW_VER  : '0.5'
+        SEC_FW_VER  : '0.7'
+    newVersion      :
+        PRI_FW_VER  : '0.5'
+        SEC_FW_VER  : '0.7'
+
+DIAG              :
+    name:   DIAG
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/DIAG
+    isAutoBuild     : true
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : /home
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+DIAG_OS              :
+    name:   DIAG_OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.0.0'
+
+SDK              :
+    name:   SDK
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/SDK
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : 'gibraltar-sdk-v2.0.0.zip'
+    newImage        : 'gibraltar-sdk-v2.0.5.zip'
+    oldVersion      : '2.0.0'
+    newVersion      : '2.0.5'
+    newVersion_MISC :
+            releaseDate        : '2020-11-02'
+            ciscoSDKVersion    : '1.34.0p'
+            GBSerdesVersion    : '0.25.0.1344'
+
+CIT                 :
+    name:  CIT
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Cloudripper/autotest/CIT
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/CIT
+    imageServer     : PC
+    oldImage        : 'cit.tar'
+    newImage        : 'cit.tar'
+    oldVersion      : ''
+    newVersion      : ''
+
+I210              :
+    name:   I210
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.25'
+

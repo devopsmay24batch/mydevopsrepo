@@ -1,0 +1,34 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+####example:
+#test_siuts    :  [EDA-DIAG-BMC-2, EDA-DIAG-BMC-3, EDA-DIAG-BMC-4]    e.g. stress test
+#functions     :  [ONIE, BMC]
+#platforms     :  [N2200, S5200]
+
+
+#if test_siuts is empty, run all the related test suits, 
+#test_siuts is not empty, run the defined test suits, and will not check functions and flatforms then !!
+#if platforms is empty, run all the platforms
+#if functions is empty, run all the related functions
+
+testSuits     :  []
+functions     :  []
+devices       :  []
+#merge_log：Used in loop testing. The default value is False
+#when merge_log is True, the existing log will be merged and will not affecting the current loop test
+#You can use this flag to control the current loop test
+merge_log     :  False
+
+#stop_test：Used in loop testing. The default value is False
+#when stop_test is True, the current loop will be ended immediately, the existing log will be merged,
+#and the subsequent loop will not be executed (no exception will be generated if your test is OK)
+#You can use this flag to control the current loop test
+stop_test     :  False

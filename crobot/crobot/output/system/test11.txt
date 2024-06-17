@@ -1,0 +1,236 @@
+
+[root@localhost log]# unidiag
+    System Version   :
+        BIOS: NL302
+        BMC:  janga-v0.31 (master)
+        I210: v3.30, 0x80000774
+        SDK:  2024/05/06 v2.2.0
+        BSP:  v2.0.0
+        UDEV: v2.0.0
+        OS:   v2.0.0
+
+        Platform:   janga
+        IOB FPGA:   v0.42
+        DOM FPGA:   v0.33
+        SMB CPLD 1: v2.0.0    booted from: External Flash
+        SMB CPLD 2: v2.0.0    booted from: External Flash
+        PWR CPLD:   v2.0.0    booted from: External Flash
+        COMe FPGA:  PVT (0x05)
+
+        BRD REV: DVT1
+        PN: R4062G000203
+        SN: GR23324190023
+
+minerva@unidiag_2.1.0:~$  press [ a b c d e f g h i j k ] to run a test :
+>>> h
+
+ =============       <<< Meta Unidiag Platform >>>       ==============
+  [ a ]    auto (0)                                                  0
+  [ b ]    CPU Stress (1)                                            0
+  [ c ]    MEM Stress (1)                                            0
+  [ d ]    PTU Stress (1)                                            0
+  [ e ]    NIC Server Stress (1)                                     0
+  [ f ]    NIC Client Stress (1)                                     0
+  [ g ]    I2C Scan Stress (1)                                       0
+  [ h ]    I2C OSFP/QSFP Scan Stress (1)                             0
+  [ i ]    SPI Scan Stress (1)                                       0
+  [ j ]    PCIe Scan Stress (1)                                      0
+  [ k ]    FPGA Stress (1)                                           0
+  [ l ]    IO Stress (1)                                             0
+  [ m ]    MP2975 Monitoring Stress Test (1)                         0
+  [ q ]  « Back to upper menu
+ ============= [              Stress Test               ] =============
+minerva@unidiag_2.1.0:~$  press [ a b c d e f g h i j k l m ] to run a test :
+>>> b
+>>> [ Testcase stress ] CPU Stress
+You are about to run CPU stress test. Do you want to start? (y/n)
+y
+(y) test_CPU_stress : CPU stress has started running. Log file i[14670.460498] process '/usr/bin/mprime' started with executable stack
+s saved to /var/unidiag/log/CPU_Stress_Test_20220825120417 Please revisit this function when you want to terminate.
+[total_funcs:  1 pass: 1  skip: 0  fail: 0 ] cost    2.70s - - [PASS]
+
+press any key to continue !
+ =============       <<< Meta Unidiag Platform >>>       ==============
+  [ a ]    auto (0)                                                  0
+  [ b ]    CPU Stress (1)                                            0
+  [ c ]    MEM Stress (1)                                            0
+  [ d ]    PTU Stress (1)                                            0
+  [ e ]    NIC Server Stress (1)                                     0
+  [ f ]    NIC Client Stress (1)                                     0
+  [ g ]    I2C Scan Stress (1)                                       0
+  [ h ]    I2C OSFP/QSFP Scan Stress (1)                             0
+  [ i ]    SPI Scan Stress (1)                                       0
+  [ j ]    PCIe Scan Stress (1)                                      0
+  [ k ]    FPGA Stress (1)                                           0
+  [ l ]    IO Stress (1)                                             0
+  [ m ]    MP2975 Monitoring Stress Test (1)                         0
+  [ q ]  « Back to upper menu
+ ============= [              Stress Test               ] =============
+minerva@unidiag_2.1.0:~$  press [ a b c d e f g h i j k l m ] to run a test :
+>>>
+ =============       <<< Meta Unidiag Platform >>>       ==============
+  [ a ]    auto (47)                                                56
+  [ b ]  » System Test (17)                                         10
+  [ c ]  » Board Test (4)                                           26
+  [ d ]  » FPGA Test (2)                                             5
+  [ e ]  » CPLD Test (3)                                             6
+  [ f ]  » Firmware Upgrade (14)                                     0
+  [ g ]  » BCB Interface Test (8)                                    0
+  [ h ]  » Stress Test (12)                                          0
+  [ i ]    Sanity Test (23)                                          0
+  [ j ]    Snapshot (1)                                              0
+  [ k ]    MFG Test (22)                                             0
+  [ q ]  « Exit Menu
+ ============= [               Test Main                ] =============
+minerva@unidiag_2.1.0:~$  press [ a b c d e f g h i j k ] to run a test :
+>>> press [Enter] to exit ... total cost 3.08 second.
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]#
+[root@localhost ~]# ls
+anaconda-ks.cfg  local.txt  mprime.pid  original-ks.cfg  prime.txt
+[root@localhost ~]# cd /var/unidiag/
+[root@localhost unidiag]# ls
+fio  firmware  log
+[root@localhost unidiag]# cd log/
+[root@localhost log]# ls
+CPU_Stress_Test_20220825120417        PCIe_Scan_Stress_Test_20220825083019
+I2C_Scan_Stress_Test_20220825085300   SPI_Scan_Stress_Test_20220825084100
+PCIe_Scan_Stress_Test_20220825081513
+[root@localhost log]# ls -l
+total 228
+-rw-r--r-- 1 root root   5634 Aug 25 12:04 CPU_Stress_Test_20220825120417
+-rw-r--r-- 1 root root   5682 Aug 25 08:53 I2C_Scan_Stress_Test_20220825085300
+-rw-r--r-- 1 root root 158890 Aug 25 08:18 PCIe_Scan_Stress_Test_20220825081513
+-rw-r--r-- 1 root root  46954 Aug 25 08:31 PCIe_Scan_Stress_Test_20220825083019
+-rw-r--r-- 1 root root   4220 Aug 25 08:42 SPI_Scan_Stress_Test_20220825084100
+[root@localhost log]# tail -f CPU_Stress_Test_20220825120417
+[Worker #15 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #3 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #10 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #1 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #9 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #16 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #14 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #6 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #11 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #12 Aug 25 12:04] Test 1, 88000 Lucas-Lehmer in-place iterations of M3835553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #8 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #7 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #16 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #15 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #1 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #2 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #10 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #9 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #11 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #13 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #14 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #12 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #5 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #6 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #4 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #3 Aug 25 12:06] Test 2, 88000 Lucas-Lehmer in-place iterations of M3785551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #8 Aug 25 12:08] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #7 Aug 25 12:08] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #16 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #15 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #1 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #2 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #10 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #9 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #13 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #14 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #11 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #12 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #5 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #6 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #4 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #3 Aug 25 12:09] Test 3, 88000 Lucas-Lehmer in-place iterations of M3735553 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #8 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #7 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #16 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #15 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #1 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #2 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #9 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #10 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #13 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #14 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #11 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #12 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #5 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #6 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #4 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+[Worker #3 Aug 25 12:11] Test 4, 88000 Lucas-Lehmer in-place iterations of M3735551 using AVX-512 FFT length 192K, Pass1=192, Pass2=1K, clm=1.
+
+[root@localhost log]# top
+top - 12:13:13 up  4:13,  1 user,  load average: 16.08, 13.39, 7.05
+Tasks: 234 total,   1 running, 233 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.1 sy, 99.1 ni,  0.0 id,  0.0 wa,  0.8 hi,  0.0 si,  0.0 st
+MiB Mem :  63650.2 total,  62791.3 free,    895.7 used,    587.6 buff/cache
+MiB Swap:  32020.0 total,  32020.0 free,      0.0 used.  62754.5 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   7116 root      20   0 1232180  37432   5632 S  1585   0.1 141:39.31 mprime
+   7181 root      20   0   10724   4352   3584 R   0.3   0.0   0:00.03 top
+      1 root      20   0  169484  13432   9600 S   0.0   0.0   0:02.51 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_fl+
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      9 root      20   0       0      0      0 I   0.0   0.0   0:00.82 kworker+
+     11 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     15 root      20   0       0      0      0 S   0.0   0.0   0:00.00 ksoftir+
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.60 rcu_sch+
+     17 root      rt   0       0      0      0 S   0.0   0.0   0:00.01 migrati+
+     18 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_in+
+
+[root@localhost log]# ps -ef| grep -i mprime
+root        7116       1 99 12:04 ttyS0    02:24:43 mprime -d -t
+root        7183    2367  0 12:13 ttyS0    00:00:00 grep --color=auto -i mprime
+[root@localhost log]# kill 7116
+[root@localhost log]#
+[root@localhost log]# top
+top - 12:13:38 up  4:13,  1 user,  load average: 13.59, 13.07, 7.12
+Tasks: 233 total,   1 running, 232 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.4 sy,  0.0 ni, 99.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  63650.2 total,  62821.3 free,    865.4 used,    588.2 buff/cache
+MiB Swap:  32020.0 total,  32020.0 free,      0.0 used.  62784.8 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  169484  13432   9600 S   0.0   0.0   0:02.51 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_fl+
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      9 root      20   0       0      0      0 I   0.0   0.0   0:00.82 kworker+
+     11 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+
+     13 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tas+
+     15 root      20   0       0      0      0 S   0.0   0.0   0:00.00 ksoftir+
+     16 root      20   0       0      0      0 I   0.0   0.0   0:00.60 rcu_sch+
+     17 root      rt   0       0      0      0 S   0.0   0.0   0:00.01 migrati+
+     18 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_in+
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+
+[root@localhost log]# tail -f CPU_Stress_Test_20220825120417
+[Worker #12 Aug 25 12:13] Worker stopped.
+[Worker #16 Aug 25 12:13] Torture Test completed 3 tests in 9 minutes - 0 errors, 0 warnings.
+[Worker #16 Aug 25 12:13] Worker stopped.
+[Worker #15 Aug 25 12:13] Torture Test completed 3 tests in 9 minutes - 0 errors, 0 warnings.
+[Worker #15 Aug 25 12:13] Worker stopped.
+[Worker #3 Aug 25 12:13] Torture Test completed 3 tests in 9 minutes - 0 errors, 0 warnings.
+[Worker #3 Aug 25 12:13] Worker stopped.
+[Worker #4 Aug 25 12:13] Torture Test completed 3 tests in 9 minutes - 0 errors, 0 warnings.
+[Worker #4 Aug 25 12:13] Worker stopped.
+[Main thread Aug 25 12:13] Execution halted.
+
+[root@localhost log]#

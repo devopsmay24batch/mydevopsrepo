@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240523 16:32:03.889" rpa="false" schemaversion="4">
+<suite id="s1" name="[MINIPACK3_E02] MINIPACK3_Diag Test" source="/home/meta-cict/arun/glow/crobot/crobot/../common/diag/minipack3_diag.robot">
+<kw name="Diag Connect Device" type="SETUP">
+<kw name="WPL Set Library Order" library="Resource">
+<kw name="WPL DiagSetLibraryOrder" library="DiagLibAdapter">
+<status status="PASS" starttime="20240523 16:32:14.820" endtime="20240523 16:32:14.820"/>
+</kw>
+<status status="PASS" starttime="20240523 16:32:14.820" endtime="20240523 16:32:14.820"/>
+</kw>
+<kw name="WPL Diag Device Connect" library="DiagLibAdapter">
+<msg timestamp="20240523 16:32:14.820" level="INFO">Opening connection to 10.204.112.160:4008 with prompt: None</msg>
+<msg timestamp="20240523 16:32:15.023" level="FAIL">ConnectionRefusedError: [Errno 111] Connection refused</msg>
+<status status="FAIL" starttime="20240523 16:32:14.820" endtime="20240523 16:32:15.024"/>
+</kw>
+<kw name="WPL Init Test Library" library="Resource">
+<status status="NOT RUN" starttime="20240523 16:32:15.024" endtime="20240523 16:32:15.024"/>
+</kw>
+<status status="FAIL" starttime="20240523 16:32:14.820" endtime="20240523 16:32:15.024"/>
+</kw>
+<test id="s1-t1" name="MiniPack3_DIAG_TC_003_System_I2c_Scan_Test" line="59">
+<doc>This is to I2c scan for system.</doc>
+<tag>minipack3</tag>
+<tag>MiniPack3_DIAG_TC_003_System_I2c_Scan_Test</tag>
+<tag>robot:exit</tag>
+<tag>test3</tag>
+<status status="FAIL" starttime="20240523 16:32:15.024" endtime="20240523 16:32:15.025">Failure occurred and exit-on-failure mode is in use.</status>
+</test>
+<kw name="Diag Disconnect Device" type="TEARDOWN">
+<kw name="WPL Diag Device Disconnect" library="DiagLibAdapter">
+<status status="PASS" starttime="20240523 16:32:15.025" endtime="20240523 16:32:20.027"/>
+</kw>
+<status status="PASS" starttime="20240523 16:32:15.025" endtime="20240523 16:32:20.027"/>
+</kw>
+<doc>This Suite will validate all Diag OS</doc>
+<status status="FAIL" starttime="20240523 16:32:03.890" endtime="20240523 16:32:20.027">Suite setup failed:
+ConnectionRefusedError: [Errno 111] Connection refused</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="0" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="1" skip="0">MiniPack3_DIAG_TC_003_System_I2c_Scan_Test</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="[MINIPACK3_E02] MINIPACK3_Diag Test">[MINIPACK3_E02] MINIPACK3_Diag Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240523 16:32:03.917" level="ERROR">Error in file '/home/meta-cict/arun/glow/crobot/common/diag/Resource.robot' on line 284: Creating keyword 'Search for regex pattern list with paired and ordered matches' failed: Invalid argument specification: Only normal arguments accept default values, list arguments like '@{regex}' do not.</msg>
+<msg timestamp="20240523 16:32:03.917" level="ERROR">Error in file '/home/meta-cict/arun/glow/crobot/common/diag/Resource.robot' on line 317: Creating keyword 'Search for regex pattern list' failed: Invalid argument specification: Only normal arguments accept default values, list arguments like '@{regex}' do not.</msg>
+</errors>
+</robot>

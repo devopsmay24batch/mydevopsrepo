@@ -1,0 +1,102 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+briggs_10006 :
+    name    : briggs_10006
+    os      : Ubuntu
+    deviceType      : DUT
+    consoleIP       : 192.168.0.244
+    consolePort     : 10006
+    bmcConsoleIP     : 192.168.0.244
+    bmcConsolePort   : 10006
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['']
+    keysSwitchToBmc: [""]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : 'root'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : kapok
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : [12, 15]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'root.*?CEL-DiagOS'
+    promptGrub      : ''
+    promptUboot      : 'ALPINE_DB'
+    promptBmc       : ''
+    loginPromptDiagOS : 'CEL-DiagOS login'
+    loginPromptBmc  : 'login:'
+briggs_10007 :
+    name    : briggs_10007
+    os      : Ubuntu
+    deviceType      : DUT
+    consoleIP       : 192.168.0.244
+    consolePort     : 10007
+    bmcConsoleIP     : 192.168.0.244
+    bmcConsolePort   : 10007
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['']
+    keysSwitchToBmc: [""]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : 'root'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : kapok
+    managementInterface : eth0
+    powerCycler     : powerCycler2
+    powerCyclerPort : [1, 2]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'root.*?CEL-DiagOS'
+    promptGrub      : ''
+    promptUboot      : 'ALPINE_DB'
+    promptBmc       : ''
+    loginPromptDiagOS : 'CEL-DiagOS login'
+    loginPromptBmc  : 'login:'
+PC :
+  name            : PC
+  deviceType      : server
+  platform        : ubuntu
+  username        : svt
+  password        : '123456'
+  rootUserName    : svt
+  rootPassword    : '123456'
+  scpUsername     : 'svt'
+  scpPassword     : '123456'
+  managementIP    : 192.168.0.4
+  managementIPV6  : '2001:db8:0:2::2'
+  staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+  prompt          : 'svt-NF5270M3'
+JENKINS :
+  name            : JENKINS
+  deviceType      : server
+  platform        : ubuntu
+  username        : svt
+  password        : '123456'
+  rootUserName    : svt
+  rootPassword    : '123456'
+  scpUsername     : 'svt'
+  scpPassword     : '123456'
+  managementIP    : 192.168.0.4
+  managementIPV6  : '2001:db8:0:1::2'
+  staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+  prompt          : 'svt-NF5270M3'

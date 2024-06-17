@@ -1,0 +1,19 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+## this file will be putted under the same dir of image files putted
+## e.g /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/BMC
+#
+#oldImage    : flash-wedge400-v2.9
+#newImage    : flash-wedge400-v3.0
+#oldVersion  : 2.9
+#newVersion  : 3.0
+
+{newImage: flash-wedge400-v3.2, newVersion: '3.2', oldImage: flash-wedge400-v3.0, oldVersion: '3.0'}

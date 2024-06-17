@@ -1,0 +1,196 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+shamu_4002 :     # this need accessed by server 10.194.63.191
+    name    : shamu_4002
+    os             : sonic
+    deviceType     : DUT
+    consoleIP       : 10.194.62.67
+    consolePort     : 4002
+    bmcConsoleIP    : 10.194.62.67
+    bmcConsolePort  : 4002
+    # for shamu, switch to BMC: ctrl+u and 2, switch to CPU:ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName       : admin
+    password       : admin
+    rootUserName   : admin
+    rootPassword   : 'admin'
+    bmcUserName    : root
+    bmcPassword    : '0penBmc'
+    managementIP   : 192.168.0.142
+    managementMask : 255.255.255.0
+    platform       : ali
+    managementInterface : eth0
+    powerCycler    : powerCycler2
+    powerCyclerPort : 1
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+shamu_4003 :     # this need accessed by server 10.192.62.125
+    name    : shamu_4003
+    os             : sonic
+    deviceType     : DUT
+    consoleIP       : 10.194.77.14
+    consolePort     : 4003
+    bmcConsoleIP    : 10.194.77.14
+    bmcConsolePort  : 4003
+    # for shamu, switch to BMC: ctrl+u and 2, switch to CPU:ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName       : admin
+    password       : admin
+    rootUserName   : admin
+    rootPassword   : 'admin'
+    bmcUserName    : root
+    bmcPassword    : '0penBmc'
+    managementIP   : 192.168.0.142
+    managementMask : 255.255.255.0
+    platform       : ali
+    managementInterface : eth0
+    powerCycler    : powerCycler3
+    powerCyclerPort : 5
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+shamu_4004 :     # this need accessed by server 10.192.62.125
+    name    : shamu_4004
+    os             : sonic
+    deviceType     : DUT
+    consoleIP       : 10.194.77.14
+    consolePort     : 4004
+    bmcConsoleIP    : 10.194.77.14
+    bmcConsolePort  : 4004
+    # for shamu, switch to BMC: ctrl+u and 2, switch to CPU:ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName       : admin
+    password       : admin
+    rootUserName   : admin
+    rootPassword   : 'admin'
+    bmcUserName    : root
+    bmcPassword    : '0penBmc'
+    managementIP   : 192.168.0.142
+    managementMask : 255.255.255.0
+    platform       : ali
+    managementInterface : eth0
+    powerCycler    : powerCycler3
+    powerCyclerPort : 6
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+shamu_4005 :     #
+    name    : shamu_4005
+    os             : sonic
+    deviceType     : DUT
+    consoleIP       : 10.194.62.127
+    consolePort     : 4005
+    bmcConsoleIP    : 10.194.62.127
+    bmcConsolePort  : 4005
+    # for shamu, switch to BMC: ctrl+u and 2, switch to CPU:ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName       : admin
+    password       : admin
+    rootUserName   : admin
+    rootPassword   : 'admin'
+    bmcUserName    : root
+    bmcPassword    : '0penBmc'
+    managementIP   : 192.168.0.142
+    managementMask : 255.255.255.0
+    platform       : ali
+    managementInterface : eth0
+    powerCycler    : powerCycler1
+    powerCyclerPort : 23
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+#PC :
+#  name            : PC
+#  deviceType      : server
+#  platform        : ubuntu
+#  username        : svt
+#  password        : '123456'
+#  rootUserName    : svt
+#  rootPassword    : '123456'
+#  scpUsername     : 'svt'
+#  scpPassword     : '123456'
+#  managementIP    : 192.168.0.4
+#  managementIPV6  : '2001:db8:0:2::2'
+#  staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+#  prompt          : 'svt-PowerEdge-R720'
+JENKINS :
+  name            : JENKINS
+  deviceType      : server
+  platform        : ubuntu
+  username        : svt
+  password        : '1qaz!QAZsvt'
+  rootUserName    : svt
+  rootPassword    : '1qaz!QAZsvt'
+  scpUsername     : 'svt'
+  scpPassword     : '1qaz!QAZsvt'
+  managementIP    : 192.168.0.4
+  managementIPV6  : '2001:db8:0:1::2'
+  staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+  prompt          : 'svt-PowerEdge-R720'
+
+# if we use shamu_4003/4, can uncomment the following PC and JENKINS, and comment above PC and JENKINS
+PC :
+    name            : ubuntu
+    deviceType      : server
+    platform        : ubuntu
+    username        : root
+    password        : 'root'
+    rootUserName    : root
+    rootPassword    : 'root'
+    scpUsername     : 'root'
+    scpPassword     : 'root'
+    managementIP    : 10.194.63.191
+    managementIPV6  : 'fe80::c3b5:bfe0:253a:9fad'
+    staticIPV6      : 'fe80::c3b5:bfe0:253a:9fad'
+    prompt          : '@SSL-SAP:'
+#JENKINS :
+#    name            : ubuntu
+#    deviceType      : server
+#    platform        : ubuntu
+#    username        : root
+#    password        : '123456'
+#    rootUserName    : root
+#    rootPassword    : '123456'
+#    scpUsername     : 'root'
+#    scpPassword     : '123456'
+#    managementIP    : 192.168.0.169
+#    managementIPV6  : 'fe80::94c8:7c:cde:a334'
+#    staticIPV6      : 'fe80::94c8:7c:cde:a334'
+#    prompt          : 'root@testauto:'

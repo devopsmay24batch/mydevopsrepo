@@ -1,0 +1,6 @@
+onie_tc14:
+    white_list: ['of_irq_parse_pci() failed with rc=-22', 'Failed to update FRU in SRAM', 'failed (cacafcfc)',
+        'FRU initialization failed', 'failed to retrieve MAC address', 'Failed to initialise',
+        'Firmware registration failed', 'failed with error -22', 'BOOT_APP not found in TOC', 'APCEA not found in TOC',
+        'IPXE not found in TOC', 'U-Boot script not found in TOC', 'UEFI not found', 'annapurna labs msi chip not found']
+    black_list: []

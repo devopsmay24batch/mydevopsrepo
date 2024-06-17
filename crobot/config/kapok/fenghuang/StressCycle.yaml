@@ -1,0 +1,24 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2021, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+# this config file used to define how many times the cases need to run
+KAPOK_STRESS_TC_05_Power_Cycle_Test : 2
+KAPOK_STRESS_TC_06_Ddr_Stress_Test : 2
+KAPOK_STRESS_TC_07_SSD_STRESS_TEST : 2
+KAPOK_STRESS_TC_08_I2C_BUS_SCAN_STRESS_TEST : 2
+KAPOK_STRESS_TC_09_DIAG_ALL_TEST : 2
+KAPOK_STRESS_TC_10_UBOOT_MGMT_TFTP_STRESS_TEST : 2
+KAPOK_STRESS_TC_11_ONIE_Updater_Stress_Test : 2
+KAPOK_STRESS_TC_12_CPLD/FPGA_Updates_Stress_Test : 2
+KAPOK_STRESS_TC_13_Warm_Reboot_Stress_Test : 2
+KAPOK_STRESS_TC_14_ReInit_SDK_Stress_Test : 2
+KAPOK_STRESS_TC_15_PRBS_SDK_Stress_Test : 2
+prbs_rx_31_25g_43200_cmd : 'diagtest serdes prbs rx all all prbs31 25g 43200'
+prbs_rx_31_10g_43200_cmd : 'diagtest serdes prbs rx all all prbs31 10g 43200'

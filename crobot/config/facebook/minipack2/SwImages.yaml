@@ -1,0 +1,329 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BMC:
+    name            :  BMC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/BMC # the image location on the server
+    isAutoBuild     : true             # it is auto build, Jenkins task will put the new built images under hostImageDir
+    imageInfoFile   : ImageInfo.yaml   # for the auto build, Jenkins task will update the fw information in this file, and CAP script will parse fw information from this file.
+    localImageDir   : /mnt/data1/BMC   # the image location on the test unit
+    imageServer     : PC               # the server contain the images, it is defined in DeviceInfo.yaml
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+BIOS:
+    name            :  BIOS
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/BIOS
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /mnt/data1/BIOS
+    imageServer     : PC
+    oldImage        : 'XG1_3A07.bin'
+    newImage        : 'XG1_3A09.bin'
+    oldVersion      : XG1_3A07
+    newVersion      : XG1_3A09
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/CPLD
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/BMC_Diag/firmware/CPLD
+    imageServer     : PC
+    oldImage        :
+        fcm         : 'MiniPack2_FAN_CPLD_TOP_V0.3.0.vme'
+        fcm_hw      : 'MiniPack2_FAN_CPLD_TOP_V0.3.0.bin'
+        scm         : 'MiniPack2_SCM_CPLD_TOP_V0.5.0.vme'
+        scm_hw      : 'MiniPack2_SCM_CPLD_TOP_V0.6.0.bin'
+        smb         : 'MiniPack2_SMB_CPLD_TOP_V0.5.0.vme'
+        pwr         : 'MiniPack2_PWR_CPLD_TOP_V0.5.0.vme'
+        pwr_hw      : 'MiniPack2_PWR_CPLD_TOP_V0.5.0.bin'
+    newImage        :
+        fcm         : 'MiniPack2_FAN_CPLD_TOP_V0.3.0.vme'
+        fcm_hw      : 'MiniPack2_FAN_CPLD_TOP_V0.3.0.bin'
+        scm         : 'MiniPack2_SCM_CPLD_TOP_V0.6.0.vme'
+        scm_hw      : 'MiniPack2_SCM_CPLD_TOP_V0.6.0.bin'
+        smb         : 'MiniPack2_SMB_CPLD_TOP_v1.2.0.vme'
+        pwr         : 'MiniPack2_PWR_CPLD_TOP_V0.5.0.vme'
+        pwr_hw      : 'MiniPack2_PWR_CPLD_TOP_V0.5.0.bin'
+    oldVersion      :
+        FCMCPLD B   : '0.3.0'
+        FCMCPLD T   : '0.3.0'
+        SCMCPLD     : '0.5.0'
+        SMBCPLD     : '0.5.0'
+        PWRCPLD L   : '0.5.0'
+        PWRCPLD R   : '0.5.0'
+    newVersion      :
+        FCMCPLD B   : '0.3.0'
+        FCMCPLD T   : '0.3.0'
+        SCMCPLD     : '0.6.0'
+        SMBCPLD     : '1.2.0'
+        PWRCPLD L   : '0.5.0'
+        PWRCPLD R   : '0.5.0'
+
+BIC:
+    name            :  BIC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/BIC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/BIC
+    imageServer     : PC
+    oldImage        : 'xg1_snowflake_108.bin'
+    newImage        : 'xg1_snowflake_111.bin'
+    oldVersion      : 'v1.08'
+    newVersion      : 'v1.11'
+
+FPGA                :
+    name:  FPGA
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/FPGA
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/FPGA
+    imageServer     : PC
+    oldImage        :
+        iob         : 'mpack2_iob_v0.41.bit'
+        pim         : 'mpack2_pim_v0.31.bit'
+    newImage        :
+        iob         : 'mpack2_iob_v0.49.bit'
+        pim         : 'mpack2_pim_v0.34.bit'
+    oldVersion      :
+        SMB_IOB_FPGA: '0.41'
+        PIM1 DOMFPGA: '0.31'
+        PIM2 DOMFPGA: '0.31'
+        PIM3 DOMFPGA: '0.31'
+        PIM4 DOMFPGA: '0.31'
+        PIM5 DOMFPGA: '0.31'
+        PIM6 DOMFPGA: '0.31'
+        PIM7 DOMFPGA: '0.31'
+        PIM8 DOMFPGA: '0.31'
+    newVersion      :
+        SMB_IOB_FPGA: '0.49'
+        PIM1 DOMFPGA: '0.34'
+        PIM2 DOMFPGA: '0.34'
+        PIM3 DOMFPGA: '0.34'
+        PIM4 DOMFPGA: '0.34'
+        PIM5 DOMFPGA: '0.34'
+        PIM6 DOMFPGA: '0.34'
+        PIM7 DOMFPGA: '0.34'
+        PIM8 DOMFPGA: '0.34'
+
+FPGA_DRIVER         :
+    name:   FPGA_DRIVER
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '0.13'
+
+TH3                 :
+    name:  TH3
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/TH3
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TH3
+    imageServer     : PC
+    oldImage        : 'TH3_PCIE_FW_02_05'
+    newImage        : 'pciefw_2.06.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.6'
+        PCIe FW version       : 'D102_0A'
+    newVersion      :
+        PCIe FW loader version : '2.8001'
+        PCIe FW version       : 'E001_09'
+
+OOB                 :
+    name:  OOB
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/BMC_Diag/firmware/OOB
+    imageServer     : PC
+    oldImage        : 'bcm5387_Minipack2_04281212'
+    newImage        : 'bcm5387_Minipack2_04281212'
+    oldVersion      : ''
+    newVersion      : ''
+
+SCM                 :
+    name:  SCM
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion              :
+        Bridge-IC Version             : 'v1.09'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A07'
+        CPLD Version                  : '0x00010032'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+    newVersion              :
+        Bridge-IC Version             : 'v1.11'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A09'
+        CPLD Version                  : '0x00010032'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+
+TPM                 :
+    name:  TPM
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/TPM
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TPM
+    imageServer     : PC
+    oldImage        : 'TPM2_Test_Scripts_for_v3.0.tar.gz'
+    newImage        : 'TPM2_Test_Scripts_for_v7.2.tar.gz'
+    oldVersion      : '3.0'
+    newVersion      : '7.2'
+
+OS                  :
+    name:   OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '8.1.1911'
+
+KERNEL              :
+    name:   KERNEL
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '5.2.21'
+
+PSU                :
+    name:  PSU
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/PSU
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/PSU
+    imageServer     : PC
+    oldImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v3.0a_CRC_8264_18Feb2020_JC.bin'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.0a_CRC_50B2_18Feb2020_JC.bin'
+    newImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v4.0a_CRC_4D57_26Mar2019_HZ.BIN'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.2a_CRC_61E9_18Feb2020_JC.bin'
+    oldVersion      :
+        PRI_FW_VER  : '3.0'
+        SEC_FW_VER  : '3.0'
+    newVersion      :
+        PRI_FW_VER  : '4.0'
+        SEC_FW_VER  : '3.2'
+
+DIAG              :
+    name:   DIAG
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/DIAG
+    isAutoBuild     : true
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : /home
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+DIAG_OS              :
+    name:   DIAG_OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '2.0.0'
+
+SDK              :
+    name:   SDK
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/SDK
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R3097-J0021-01-V2.0.0-Minipack2_SDK.zip'
+    oldVersion      : ''
+    newVersion      : '2.0.0'
+
+CIT                 :
+    name:  CIT
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minipack2/autotest/CIT
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/CIT
+    imageServer     : PC
+    oldImage        : 'cit.tar'
+    newImage        : 'cit.tar'
+    oldVersion      : ''
+    newVersion      : ''
+
+I210              :
+    name:   I210
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.25'
+
+PCIE_SW             :
+    name            :  PCIE_SW
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/BMC_Diag/firmware/PCIe_Switch
+    imageServer     : PC
+    oldImage        : 'MINIPACK2SMB_B036_PM40028B_v1_image.data'
+    newImage        : 'MINIPACK2SMB_B036_PM40028B_v1_image.data'
+    oldVersion      : 'v1'
+    newVersion      : 'v1'
+
+TH4_PCIE_FLASH      :
+    name            : TH4_PCIE_FLASH
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/BMC_Diag/firmware/TH4
+    imageServer     : PC
+    oldImage        : 'pciefw-r5-m7.bin'
+    newImage        : 'pciefw-r5-m7.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.8001'
+        PCIe FW version       : 'E001_09'
+    newVersion      :
+        PCIe FW loader version : '2.8001'
+        PCIe FW version       : 'E001_09'

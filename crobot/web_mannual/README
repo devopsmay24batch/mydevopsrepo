@@ -1,0 +1,30 @@
+This service is intended for ineraction during manual test.
+Sevice information is defined in dialogs_manual.py, such as
+    work_dir = "/CLSRobot/crobot/web_mannual" #Used for start web server
+    server_info = { "web_server":"127.0.0.1", "port":"5000" } #the port is activated by flask
+    web_publish_info = { "web_server":"10.204.125.4", "port":"32778" } #Print out URL in log, it's published port by container
+
+
+Usage:
+ cd web_mannual
+ export FLASK_APP=web.py
+ nohup flask run -h 0.0.0.0 > mannual_web.log 2>&1 &
+
+Run test cases:
+    a) Import keywords pause_execution from dialogs_manual.py in manual step
+    b) Answer with the real option in the printout URL during the case is running 
+    unset http_proxy
+    cd ../crobot
+    time bash ./start_crobot.sh -s kapok_onie -p fenghuang_10003 -t KAPOK_OINE_MANUAL_TC_01 -l 1
+
+ Then the URL will be printed out, please answer it with your option, the case will continue to run.
+
+ If there is network issue, please set or unset the proxy.
+    export http_proxy=http://shrd:QQww4321@10.204.9.8:9090/
+    export https_proxy=https://shrd:QQww4321@10.204.9.8:9090/
+
+ Requirement:
+    pip install flask requests
+
+ Command for  publishing docker port 5000:
+   docker run  -itd  -p 5000

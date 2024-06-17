@@ -1,0 +1,46 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+SES:
+    name            :  SES
+    hostImageDir    : /home/sesfw/sesfw/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /home/test/
+    imageServer     : PC
+    oldImage        : 'titan_3.9.7.32_CombinedImage.bin'
+    newImage        : 'titan_3.9.8.32_CombinedImage.bin'
+    oldVersion      : 3.9.7.32
+    newVersion      : 3.9.8.32
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /home/sesfw/sesfw/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /home/test/
+    imageServer     : PC
+    oldImage        : 'Titan_PMC_CPLD_0.7_0.C.bin'
+    newImage        : 'Titan_PMC_CPLD_0.7_0.D.bin'
+    oldVersion      : 0.7.0.C
+    newVersion      : 0.7.0.D
+
+FAULT_IMAGE:
+    name            :  FAULT_IMAGE
+    hostImageDir    : /home/sesfw/sesfw/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /home/test
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'titan_9.9.7.32_FlipFlop_FaultImage.bin'
+    oldVersion      : ''
+    newVersion      : ''
+

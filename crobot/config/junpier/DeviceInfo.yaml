@@ -1,0 +1,78 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+lagavulin_lagav-d01 :
+    name    : lagavulin_lagav-d01
+    os      : centos
+    deviceType      : DUT
+    consoleIP       : 192.168.0.236
+    consolePort     : 10016
+    bmcConsoleIP     : 192.168.0.236
+    bmcConsolePort   : 10016
+    keysSwitchToCpu: ['']
+    keysSwitchToBmc: [""]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.66
+    managementMask  : 255.255.255.0
+    platform         : juniper
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : 22
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'root@localhost'
+    promptGrub      : ''
+    promptUboot      : 'ALPINE_DB'
+    promptBmc       : ''
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'login:'
+
+
+PC :
+    name            : ubuntu
+    deviceType      : server
+    platform        : ubuntu
+    username        : cap
+    password        : '1qaz!QAZsvt'
+    rootUserName    : root
+    rootPassword    : '1qaz!QAZsvt'
+    scpUsername     : 'root'
+    scpPassword     : '1qaz!QAZsvt'
+    managementIP    : 192.168.0.179
+    managementIPV6  : 2001:db8:0:1::2
+    staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+    prompt          : 'cap@cap-PowerEdge-R720'
+
+JENKINS :
+    name : ubuntu
+    deviceType : server
+    platform : ubuntu
+    username : 'None'
+    password : 'None'
+    rootUserName : 'None'
+    rootPassword : 'None'
+    scpUsername : 'root'
+    scpPassword : '1qaz!QAZsvt'
+    managementIP : 192.168.0.179
+    managementIPV6  : 2001:db8:0:1::2
+    staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+    prompt : 'None'
+
+platforms:
+    facebook:
+        email_group : [xiaoqwa@celestica.com]
+    alibaba:
+        email_group : [xiaoqwa@celestica.com]

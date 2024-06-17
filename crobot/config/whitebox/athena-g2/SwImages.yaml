@@ -1,0 +1,553 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BMC:
+    name            :  BMC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/BMC # the image location on the server
+    isAutoBuild     : true             # it is auto build, Jenkins task will put the new built images under hostImageDir
+    imageInfoFile   : ImageInfo.yaml   # for the auto build, Jenkins task will update the fw information in this file, and CAP script will parse fw information from this file.
+    localImageDir   : /mnt/data1/BMC   # the image location on the test unit
+    imageServer     : PC               # the server contain the images, it is defined in DeviceInfo.yaml
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+BIOS:
+    name            :  BIOS
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/BIOS
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /mnt/data1/BIOS
+    imageServer     : PC
+    oldImage        : 'XG1_3A09.bin'
+    newImage        : 'XG1_3A10.bin'
+    oldVersion      : XG1_3A09
+    newVersion      : XG1_3A10
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /home/sesfw/sesfw/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /home/test/
+    imageServer     : PC
+    oldImage        : 'Titan_PMC_CPLD_0.7_0.C.bin'
+    newImage        : 'Titan_PMC_CPLD_0.7_0.D.bin'
+    oldVersion      : 0.7.0.C
+    newVersion      : 0.7.0.D
+
+
+BIC:
+    name            :  BIC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/BIC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/BIC
+    imageServer     : PC
+    oldImage        : 'xg1_snowflake_109.bin'
+    newImage        : 'xg1_snowflake_111.bin'
+    oldVersion      : 'v1.09'
+    newVersion      : 'v1.11'
+
+FPGA                :
+    name:  FPGA
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/FPGA
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/FPGA
+    imageServer     : PC
+    oldImage        : 'w400_v0045.bit'
+    newImage        : 'w400_v0056.bit'
+    oldVersion      :
+        DOMFPGA1    : '0.45'
+        DOMFPGA2    : '0.45'
+    newVersion      :
+        DOMFPGA1    : '0.56'
+        DOMFPGA2    : '0.56'
+
+TH3                 :
+    name:  TH3
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/TH3
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TH3
+    imageServer     : PC
+    oldImage        : 'TH3_PCIE_FW_02_05'
+    newImage        : 'pciefw_2.06.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.5'
+        PCIe FW version       : 'D102_08'
+    newVersion      :
+        PCIe FW loader version : '2.6'
+        PCIe FW version       : 'D102_0A'
+
+OOB                 :
+    name:  OOB
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/OOB
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/OOB
+    imageServer     : PC
+    oldImage        : 'w400_oob_eeprom_fw_v1.0.bin'
+    newImage        : 'w400_oob_eeprom_fw_v1.0.bin'
+    oldVersion      : 'v1.0'
+    newVersion      : 'v1.0'
+
+SCM                 :
+    name:  SCM
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion              :
+        Bridge-IC Version             : 'v1.09'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A07'
+        CPLD Version                  : '0x00010032'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+    newVersion              :
+        Bridge-IC Version             : 'v1.11'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A09'
+        CPLD Version                  : '0x00010032'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+
+TPM                 :
+    name:  TPM
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/TPM
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TPM
+    imageServer     : PC
+    oldImage        : 'TPM2_Test_Scripts_for_v3.0.tar.gz'
+    newImage        : 'TPM2_Test_Scripts_for_v7.85.tar.gz'
+    oldVersion      : '3.0'
+    newVersion      : '7.85'
+
+OS                  :
+    name:   OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '8.1.1911'
+
+KERNEL              :
+    name:   KERNEL
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '5.2.21'
+
+PSU                :
+    name:  PSU
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/PSU
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/PSU
+    imageServer     : PC
+    oldImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v3.0a_CRC_8264_18Feb2020_JC.bin'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.0a_CRC_50B2_18Feb2020_JC.bin'
+    newImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v4.0a_CRC_4D57_26Mar2019_HZ.BIN'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.2a_CRC_61E9_18Feb2020_JC.bin'
+    oldVersion      :
+        PRI_FW_VER  : '3.0'
+        SEC_FW_VER  : '3.0'
+    newVersion      :
+        PRI_FW_VER  : '4.0'
+        SEC_FW_VER  : '3.2'
+
+DIAG              :
+    name:   DIAG
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/DIAG
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : /home
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+DIAG_OS              :
+    name:   DIAG_OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.0.0'
+
+SDK              :
+    name:   SDK
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/SDK
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : 'gibraltar-sdk-v2.0.0.zip'
+    newImage        : 'gibraltar-sdk-v2.0.4.zip'
+    oldVersion      : '2.0.0'
+    newVersion      : '2.0.4'
+
+CIT                 :
+    name:  CIT
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/CIT
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/CIT
+    imageServer     : PC
+    oldImage        : 'cit.tar'
+    newImage        : 'cit.tar'
+    oldVersion      : ''
+    newVersion      : ''
+
+I210              :
+    name:   I210
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.25'
+
+Athena_G2_FW_CPLD_A    :
+    name:   Athena_G2_FW_CPLD_A
+    hostImageDir    : Athena-G2-FW/CPLD
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Athena-G2-FW/CPLD
+    imageServer     : PC
+    oldImage        :
+        A0 : 'Athena_gen2_cpld_v0.5.6.jed'
+    newImage        :
+        A0 : 'Athena_gen2_cpld_v0.5.7.jed'
+    oldVersion      : 'v0.5.6'
+    newVersion      : 'v0.5.7'
+
+Athena_G2_FW_CPLD_B    :
+    name:   Athena_G2_FW_CPLD_B
+    hostImageDir    : /root/Athena-G2-FW/CPLD
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Athena-G2-FW/CPLD
+    imageServer     : PC1
+    oldImage        :
+        A0 : 'Athena_gen2_cpld_v0.5.6.jed'
+    newImage        :
+        A0 : 'Athena_gen2_cpld_v0.5.7.jed'
+    oldVersion      : 'v0.5.6'
+    newVersion      : 'v0.5.7'
+
+Athena_FW_BMC_A     :
+    name:   Athena_FW_BMC_A
+    hostImageDir    : /root/Athena-G2-FW/BMC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BMC
+    imageServer     : PC #ESMA
+    newImage        :
+          BIN         : 'athenaG2BMCWB217_flipflop.ima'
+          CFUFLASH    : 'CFUFLASH'
+          IPMI_driver : 'ipmi_driver.sh'
+          SOCFLASH    : 'socflash_x64'
+    oldImage        :
+          BIN         : 'athenaG2BMCWB217.ima'
+          CFUFLASH    : 'CFUFLASH'
+          IPMI_driver : 'ipmi_driver.sh'
+          SOCFLASH    : 'socflash_x64'
+    newVersion      : '7.17'
+    oldVersion      : '2.17'
+
+Athena_FW_BMC_B     :
+    name:   Athena_FW_BMC_B
+    hostImageDir    : /root/Athena-G2-FW/BMC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BMC
+    imageServer     : PC1 #ESMB
+    newImage        :
+          BIN         : 'athenaG2BMCWB217_flipflop.ima'
+          CFUFLASH    : 'CFUFLASH'
+          IPMI_driver : 'ipmi_driver.sh'
+          SOCFLASH    : 'socflash_x64'
+    oldImage        :
+          BIN         : 'athenaG2BMCWB217.ima'
+          CFUFLASH    : 'CFUFLASH'
+          IPMI_driver : 'ipmi_driver.sh'
+          SOCFLASH    : 'socflash_x64'
+    newVersion      : '7.17'
+    oldVersion      : '2.17'
+
+Athena_FW_A    :
+    name:   Athena_FW_A
+    hostImageDir    : Athena-G2-FW/SES
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/SES
+    imageServer     : PC
+    oldImage        :
+            A0      : 'athena_gen2_2.2.8_fw_canA0.bin'
+            A1      : 'athena_gen2_2.2.8_fw_canA1.bin'
+    newImage        :
+            A0      : 'athena_gen2_2.3.3_fw_canA0.bin'
+            A1      : 'athena_gen2_2.3.3_fw_canA1.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+FAULT_IMAGE_A:
+    name            : FAULT_IMAGE_A
+    hostImageDir    : /root/Athena-G2-FW/SES
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile   : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /root/athena_gen2_fw/SES
+    imageServer     : PC
+    oldImage        : 
+            A0      : 'athena_gen2_2.2.8_fw_canA0.bin'
+            A1      : 'athena_gen2_2.2.8_fw_canA1.bin'
+    newImage        :
+            A0      : 'athena_gen2_2.3.2.19_FlipFlop_FaultImage.bin'
+            A1      : 'athena_gen2_2.3.2.19_FlipFlop_FaultImage.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+
+FAULT_IMAGE_B:
+    name            : FAULT_IMAGE_B
+    hostImageDir    : /root/Athena-G2-FW/SES
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile   : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /root/athena_gen2_fw/SES
+    imageServer     : PC1
+    oldImage        :
+            A0      : 'athena_gen2_2.2.8_fw_canA0.bin'
+            A1      : 'athena_gen2_2.2.8_fw_canA1.bin'
+    newImage        :
+            A0      : 'athena_gen2_2.3.2.19_FlipFlop_FaultImage.bin'
+            A1      : 'athena_gen2_2.3.2.19_FlipFlop_FaultImage.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+Athena_FW_B    :
+    name:   Athena_FW_B
+    hostImageDir    : Athena-G2-FW/SES
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/SES
+    imageServer     : PC1
+    oldImage        :
+            B0      : 'athena_gen2_2.2.8_fw_canB0.bin'
+            B1      : 'athena_gen2_2.2.8_fw_canB1.bin'
+    newImage        :
+            B0      : 'athena_gen2_2.3.3_fw_canB0.bin'
+            B1      : 'athena_gen2_2.3.3_fw_canB1.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+Athena_FW_CPLD_A    :
+    name:   Athena_FW_CPLD_A
+    hostImageDir    : Athena-G2-FW/SES
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/CPLD
+    imageServer     : PC
+    oldImage        :
+        A0 : 'Athena_gen2_cpld_0.5.6.bin'
+    newImage        :
+        A0 : 'Athena_gen2_cpld_v0.5.7.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+Athena_FW_CPLD_B    :
+    name:   Athena_FW_CPLD_B
+    hostImageDir    : /root/Athena-G2-FW/SES
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/CPLD
+    imageServer     : PC1
+    oldImage        :
+       A0 : 'Athena_gen2_cpld_0.5.6.bin'
+    newImage        :
+       A0 : 'Athena_gen2_cpld_v0.5.7.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+Athena_FW_BIOS_A     :
+    name:   Athena_FW_BIOS_A
+    hostImageDir    : /root/Athena-G2-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BIOS
+    imageServer     : PC
+    oldImage        : 'ATHG2.2.01.09.bin'
+    newImage        : 'ATHG2.2.02.01.bin'
+    oldVersion      : '2.2.01.09'
+    newVersion      : '2.2.02.01'
+
+Athena_FW_BIOS_B     :
+    name:   Athena_FW_BIOS_B
+    hostImageDir    : /root/Athena-G2-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BIOS
+    imageServer     : PC1
+    oldImage        : 'ATHG2.2.01.09.bin'
+    newImage        : 'ATHG2.2.02.01.bin'
+    oldVersion      : '2.2.01.09'
+    newVersion      : '2.2.02.01'
+
+Athena_FW_BIOS     :
+    name:   Athena_FW_BIOS
+    hostImageDir    : /root/Athena-G2-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BIOS
+    imageServer     : PC
+    newImage        :
+          BIN         : 'ATHG2.2.02.01.bin'
+          CFUFLASH    : 'CFUFLASH'
+          Afulnx      : 'afulnx_64'
+          IPMI_driver : 'ipmi_driver.sh'
+    oldImage        :
+          BIN         : 'ATHG2.2.01.09.bin'
+          CFUFLASH    : 'CFUFLASH'
+          Afulnx      : 'afulnx_64'
+          IPMI_driver : 'ipmi_driver.sh'
+    newVersion      : '2.2.02.01'
+    oldVersion      : '2.2.01.09'
+
+Athena_BIOS_Versions_A:
+    name:   Athena_BIOS_Versions_A
+    hostImageDir    : /root/Athena-G2-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BIOS
+    imageServer     : PC
+    oldImage        :
+        V1 : 'ATHG2.2.01.07.bin'
+        V2 : 'ATHG2.2.01.08.bin'
+        V3 : 'ATHG2.2.01.09.bin'
+    newImage        :
+        NV : 'ATHG2.2.02.01.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+Athena_BIOS_Versions_B:
+    name:   Athena_BIOS_Versions_B
+    hostImageDir    : /root/Athena-G2-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BIOS
+    imageServer     : PC1
+    oldImage        :
+        V1 : 'ATHG2.2.01.07.bin'
+        V2 : 'ATHG2.2.01.08.bin'
+        V3 : 'ATHG2.2.01.09.bin'
+    newImage        :
+        NV : 'ATHG2.2.02.01.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+#sel-generation.bash contents (can be used if file is missed)
+#!/bin/bash
+#echo "start................"
+#SNR_NUM=03
+#SNR_TYPE=1
+#EvMRev=4
+#flag=true
+#while $flag
+#do
+#ipmitool raw 0x04 0x02 $EvMRev $SNR_TYPE $SNR_NUM 1 0 0 0
+#output=`ipmitool sel info`
+#if [[ $output =~ Percent.*Used.*100% ]]; then
+#    echo "Looks like SEL Log is Full"
+#    flag=false
+#fi
+#done
+
+
+Athena_FW_BMC     :
+    name:   Athena_FW_BMC
+    hostImageDir    : /root/Athena-G2-FW/BMC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/BMC
+    imageServer     : PC
+    newImage        :
+          IMA         : 'athenaG2BMCWB217.ima'
+          CFUFLASH    : 'CFUFLASH'
+          IPMI_driver : 'ipmi_driver.sh'
+          SEL_GEN     : 'sel-generation.bash'
+    oldImage        :
+          IMA         : 'athenaG2BMCWB217.ima'
+          CFUFLASH    : 'CFUFLASH'
+          IPMI_driver : 'ipmi_driver.sh'
+          SEL_GEN     : 'sel-generation.bash'
+    newVersion      : '7.17'
+    oldVersion      : '7.17'
+
+Athena_FW_PSU_A    :
+    name:   Athena_FW_PSU_A
+    hostImageDir    : /root/Athena-G2-FW/psufw
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/psufw
+    imageServer     : PC
+    oldImage        :
+        S1F : 'TDPS2400HBA_SecFW_BA01_for_S1F_hdr.bin'
+        S2F : 'TDPS2400HBA_SecFW_BB01_for_S2F_hdr.bin'
+    newImage        :
+        S1F : 'TDPS2400HBA_SecFW_BA02_for_S1F_hdr.bin'
+        S2F : 'TDPS2400HBA_SecFW_BB02_for_S2F_hdr.bin'
+    oldVersion      : '820401'
+    newVersion      : '820402'
+
+Athena_FW_PSU_B    :
+    name:   Athena_FW_PSU_B
+    hostImageDir    : /root/Athena-G2-FW/psufw
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/athena_gen2_fw/psufw
+    imageServer     : PC1
+    oldImage        :
+        S1F : 'TDPS2400HBA_SecFW_BA01_for_S1F_hdr.bin'
+        S2F : 'TDPS2400HBA_SecFW_BB01_for_S2F_hdr.bin'
+    newImage        :
+        S1F : 'TDPS2400HBA_SecFW_BA02_for_S1F_hdr.bin'
+        S2F : 'TDPS2400HBA_SecFW_BB02_for_S2F_hdr.bin'
+    oldVersion      : '820401'
+    newVersion      : '820402'

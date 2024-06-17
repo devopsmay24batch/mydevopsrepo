@@ -1,0 +1,474 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+diag:       #  wedge400c diag
+    robotFile : "../common/diag/diag.robot"
+    outputDir : "output/diag/"
+    title     : "Diag\\ Test"
+wedge400_diag:       #  wedge400 diag
+    robotFile : "../common/diag/wedge400_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Diag\\ Test"
+minipack2_diag:
+    robotFile : "../common/diag/minipack2_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Diag\\ Test"
+cloudripper_diag:
+    robotFile : "../common/diag/cloudripper_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Diag\\ Test"
+openbmc:   #  wedge400c openbmc
+    robotFile : "../common/openbmc/bmc.robot"
+    outputDir : "output/openbmc/"
+    title     : "OpenBmc\\ Test"
+wedge400_openbmc:   #  wedge400 openbmc
+    robotFile : "../common/openbmc/wedge400_bmc.robot"
+    outputDir : "output/openbmc/"
+    title     : "OpenBmc\\ Test"
+minipack2_openbmc:
+    robotFile : "../common/openbmc/minipack2_bmc.robot"
+    outputDir : "output/openbmc/"
+    title     : "OpenBmc\\ Test"
+minipack3_openbmc:
+    robotFile : "../common/openbmc/minipack3_bmc.robot"
+    outputDir : "output/openbmc/"
+    title     : "OpenBmc\\ Test"
+cloudripper_openbmc:
+    robotFile : "../common/openbmc/cloudripper_bmc.robot"
+    outputDir : "output/openbmc/"
+    title     : "OpenBmc\\ Test"
+sdk:        #  wedge400c sdk
+    robotFile : "../common/sdk/sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Sdk\\ Test"
+wedge400_sdk:        #  wedge400 sdk
+    robotFile : "../common/sdk/wedge400_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Sdk\\ Test"
+minipack2_sdk:
+    robotFile : "../common/sdk/minipack2_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Sdk\\ Test"
+cloudripper_sdk:
+    robotFile : "../common/sdk/cloudripper_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Sdk\\ Test"
+system:      #  wedge400c
+    robotFile : "../common/system/system.robot"
+    outputDir : "output/system/"
+    title     : "System\\ Stress\\ Test"
+minerva_system:      #  wedge400c
+    robotFile : "../common/system/minerva_system.robot"
+    outputDir : "output/system/"
+    title     : "MinervaSystem\\ Stress\\ Test"
+
+
+minipack3_system:
+    robotFile : "../common/system/minipack3_system.robot"
+    outputDir : "output/system/"
+    title     : "Minipack3\\System\\ Stress\\ Test"
+
+
+
+wedge400_system:      #  wedge400
+    robotFile : "../common/system/wedge400_system.robot"
+    outputDir : "output/system/"
+    title     : "System\\ Stress\\ Test"
+minipack2_system:
+    robotFile : "../common/system/minipack2_system.robot"
+    outputDir : "output/system/"
+    title     : "System\\ Stress\\ Test"
+cloudripper_system:
+    robotFile : "../common/system/cloudripper_system.robot"
+    outputDir : "output/system/"
+    title     : "System\\ Stress\\ Test"
+system_stress:      #  meta stress
+    robotFile : "../common/system/system_stress.robot"
+    outputDir : "output/stress"
+    title     : "System\\ Stress\\ Test"
+whitebox_bmc:
+    robotFile : "../platform/whitebox/bmc/bmc.robot"
+    outputDir : "output/whitebox/bmc/"
+    title     : "Whitebox_bmc\\ Test"
+whitebox_bios:
+    robotFile : "../platform/whitebox/bios/bios.robot"
+    outputDir : "output/whitebox/bios/"
+    title     : "Whitebox_bios\\ Test"
+whitebox_athenag2_bios:
+    robotFile : "../platform/whitebox/bios/athenag2_bios.robot"
+    outputDir : "output/whitebox/bios/"
+    title     : "Whitebox_athenag2_bios\\ Test"
+whitebox_athenag2_bmc:
+    robotFile : "../platform/whitebox/bmc/athenag2_bmc.robot"
+    outputDir : "output/whitebox/bmc/"
+    title     : "Whitebox_athenag2_bmc\\ Test"   
+whitebox_athenag2_ses:
+    robotFile : "../platform/whitebox/ses/athenag2_ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "Whitebox_athenag2_ses\\ Test" 
+whitebox_ses:
+    robotFile : "../platform/whitebox/ses/ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "Whitebox_ses\\ Test"
+kapok_onie:
+    robotFile : "../platform/kapok/onie/onie.robot"
+    outputDir : "output/onie/"
+    title     : "Kapok_onie\\ Test"
+kapok_sdk:
+    robotFile : "../platform/kapok/sdk/sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Kapok_sdk\\ Test"
+briggs_sdk:
+    robotFile : "../platform/kapok/sdk/briggs_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Briggs_sdk\\ Test"
+fenghuangv2_sdk:
+    robotFile : "../platform/kapok/sdk/fenghuangv2_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "fenghuangv2_sdk\\ Test"
+kapok_stress:
+    robotFile : "../platform/kapok/stress/stress.robot"
+    outputDir : "output/stress/"
+    title     : "Kapok_stress\\ Test"
+briggs_stress:
+    robotFile : "../platform/kapok/stress/stress.robot"
+    outputDir : "output/stress/"
+    title     : "briggs_stress\\ Test"
+fenghuangv2_stress:
+    robotFile : "../platform/kapok/stress/fenghuangv2_stress.robot"
+    outputDir : "output/stress/"
+    title     : "fenghuangv2_stress\\ Test"
+tianhe_stress:
+    robotFile : "../platform/kapok/stress/tianhe_stress.robot"
+    outputDir : "output/stress/"
+    title     : "tianhe_stress\\ Test"
+fenghuang_bsp:
+    robotFile : " --variablefile ../platform/kapok/bsp/kapok/KapokBspFhVariablesLatest.py ../platform/kapok/bsp/bsp.robot"
+    outputDir : "output/bsp/"
+    title     : "Kapok_fenghuang_bsp\\ Test"
+fenghuangv2_bsp:
+    robotFile : " --variablefile ../platform/kapok/bsp/kapok/KapokBspFhVariablesLatest.py ../platform/kapok/bsp/fenghuangv2_bsp.robot"
+    outputDir : "output/bsp/"
+    title     : "fenghuangv2_bsp\\ Test"
+tianhe_bsp:
+    robotFile : " --variablefile ../platform/kapok/bsp/kapok/KapokBspFhVariablesLatest.py ../platform/kapok/bsp/tianhe_bsp.robot"
+    outputDir : "output/bsp/"
+    title     : "tianhe_bsp\\ Test"
+fenghuang_diag:
+    robotFile : " --variablefile ../platform/kapok/diag/fenghuang/KapokDiagFhVariablesLatest.py ../platform/kapok/diag/diag.robot"
+    outputDir : "output/diag/"
+    title     : "Kapok_fenghuang_diag\\ Test"
+fenghuangv2_diag:
+    robotFile : " --variablefile ../platform/kapok/diag/fenghuang/KapokDiagFhVariablesLatest.py ../platform/kapok/diag/fenghuangv2_diag.robot"
+    outputDir : "output/diag/"
+    title     : "fenghuangv2_diag\\ Test"
+tianhe_diag:
+    robotFile : " --variablefile ../platform/kapok/diag/fenghuang/KapokDiagFhVariablesLatest.py ../platform/kapok/diag/tianhe_diag.robot"
+    outputDir : "output/diag/"
+    title     : "tianhe_diag\\ Test"
+briggs_bsp:
+    robotFile : " --variablefile ../platform/kapok/bsp/kapok/KapokBspBgVariablesLatest.py ../platform/kapok/bsp/briggs_bsp.robot"
+    outputDir : "output/bsp/"
+    title     : "Kapok_briggs_bsp\\ Test"
+briggs_onie:
+    robotFile : "../platform/kapok/onie/briggs_onie.robot"
+    outputDir : "output/onie/"
+    title     : "Briggs_onie\\ Test"
+fenghuangv2_onie:
+    robotFile : "../platform/kapok/onie/fenghuangv2_onie.robot"
+    outputDir : "output/onie/"
+    title     : "Fenghuangv2_onie\\ Test"
+tianhe_onie:
+    robotFile : "../platform/kapok/onie/tianhe_onie.robot"
+    outputDir : "output/onie/"
+    title     : "tianhe_onie\\ Test"
+tianhe_sdk:
+    robotFile : "../platform/kapok/sdk/tianhe_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "tianhe_sdk\\ Test"
+51.2t_onie:
+    robotFile : "../platform/kapok/onie/51.2t_onie.robot"
+    outputDir : "output/onie/"
+    title     : "51.2t_onie\\ Test"
+tigrisv2_onie:
+    robotFile : "../platform/kapok/onie/tigrisv2_onie.robot"
+    outputDir : "output/onie/"
+    title     : "tigrisv2_onie\\ Test"
+ali_onie:
+    robotFile : "../platform/ali/onie/onie.robot"
+    outputDir : "output/onie/"
+    title     : "Ali_onie\\ Test"
+ali_diag:
+    testTag   : "ANDdiagANDmigalooNOTpending"
+    robotFile : " --flattenkeywords tag:flatten-keyword --variable PLATFORM:migaloo --variablefile ../platform/ali/AliCommonVariable.py --variablefile ../platform/ali/diag/AliDiagVariable.py ../platform/ali"
+    outputDir : "output/diag/"
+    title     : "Ali_diag\\ Test"
+ali_sdk:
+    robotFile : " --variablefile ../platform/ali/AliCommonVariable.py --variablefile ../platform/ali/sdk/AliSdkVariable.py ../platform/ali/sdk/sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Ali_sdk\\ Test"
+ali_openbmc:
+    testTag   : "ANDopenbmcANDmigalooNOTpending"
+    robotFile : " --variablefile ../platform/ali/AliCommonVariable.py --variablefile ../platform/ali/openbmc/AliOpenBmcVariable.py ../platform/ali/"
+    outputDir : "output/openbmc/"
+    title     : "Ali_openbmc\\ Test"
+ali_bios:
+    robotFile : " --variablefile ../platform/ali/AliCommonVariable.py --variablefile ../platform/ali/bios/AliBiosVariable.py ../platform/ali/bios/bios.robot"
+    outputDir : "output/bios/"
+    title     : "Ali_bios\\ Test"
+ali_sonic:
+    robotFile : "../platform/ali/sonic/sonic.robot"
+    outputDir : "output/sonic/"
+    title     : "Ali_sonic\\ Test"
+ali_stress:
+    testTag   : "ANDstressANDmigalooNOTpending"
+    robotFile : " --flattenkeywords tag:flatten-keyword --variable PLATFORM:shamu --variablefile ../platform/ali/stress/AliStressVariable.py ../platform/ali"
+    outputDir : "output/stress/"
+    title     : "Ali_stress\\ Test"
+shamu_diag:
+    testTag   : "ANDdiagANDshamuNOTpending"
+    robotFile : " --flattenkeywords tag:flatten-keyword --variable PLATFORM:shamu --variablefile ../platform/ali/diag/AliDiagShamuVariable.py ../platform/ali"
+    outputDir : "output/diag/"
+    title     : "Ali_diag\\ Test"
+shamu_openbmc:
+    testTag   : "ANDopenbmcANDshamuNOTpending"
+    robotFile : " --variablefile ../platform/ali/AliCommonVariable.py --variablefile ../platform/ali/openbmc/AliOpenBmcShamuVariable.py ../platform/ali/"
+    outputDir : "output/openbmc/"
+    title     : "Ali_openbmc\\ Test"
+shamu_sdk:
+    robotFile : "../platform/ali/sdk/shamu_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Ali_sdk\\ Test"
+midstone100X_bmc:
+    robotFile : " ../platform/whitebox/bmc/midstone100X_bmc.robot"
+    outputDir : "output/whitebox/bmc/"
+    title     : "Midstone100X_bmc\\ Test"
+midstone100X_diag:
+    robotFile : " --variablefile ../platform/whitebox/diag/DIAG_variable.py ../platform/whitebox/diag/midstone100X_diag.robot"
+    outputDir : "output/whitebox/diag/"
+    title     : "Midstone100X_diag\\ Test"
+lagavulin_diag:
+    robotFile : " --variablefile ../platform/juniper/diag/lagavulin/JuniperDiagLagavulinVariablesLatest.py ../platform/juniper/diag/lagavulin_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Juniper_lagavulin_diag\\ Test"
+tyrconnell_diag:
+    robotFile: " --variablefile ../platform/juniper/diag/lagavulin/JuniperDiagLagavulinVariablesLatest.py ../platform/juniper/diag/tyrconnell_diag.robot"
+    outputDir: "output/diag/"
+    title: "Juniper_tyrconnell_diag\\ Test"
+aberlour_diag:
+    robotFile : " --variablefile ../platform/juniper/diag/lagavulin/JuniperDiagAberlourVariables.py ../platform/juniper/diag/aberlour_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Juniper_aberlour_diag\\ Test"
+tyrconnell_sdk:
+        robotFile: "../platform/juniper/sdk/sdk.robot"
+        outputDir: "output/sdk/"
+        title: "Juniper_tyrconnell_sdk\\ Test"
+aberlour_sdk:
+        robotFile: "../platform/juniper/sdk/aberlour_sdk.robot"
+        outputDir: "output/sdk/"
+        title: "Juniper_aberlour_sdk.robot\\ Test"
+brixia_diag:
+    robotFile : " --variablefile ../platform/google/diag/GoogleDiagVariable.py ../platform/google/diag/brixia_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Google_brixia_diag\\ Test"
+brixia_linuxboot:
+    robotFile : " --variablefile ../platform/google/linuxboot/GoogleLinuxBootVariable.py ../platform/google/linuxboot/brixia_linuxboot.robot"
+    outputDir : "output/linuxboot/"
+    title     : "Google_brixia_linuxboot\\ Test"
+brixia_onie:
+    robotFile : "--variablefile ../platform/google/onie/GoogleOnieVariable.py ../platform/google/onie/brixia_onie.robot"
+    outputDir : "output/onie/"
+    title     : "Google_brixia_onie\\ Test"
+brixia_sdk:
+    robotFile : "--variablefile ../platform/google/sdk/GoogleSdkVariable.py ../platform/google/sdk/brixia_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Google_brixia_sdk\\ Test"
+brixia_sonic:
+    robotFile : "--variablefile ../platform/google/sonic/GoogleSonicVariable.py ../platform/google/sonic/brixia_sonic.robot"
+    outputDir : "output/sonic/"
+    title     : "Googlee_brixia_sonic\\ Test"
+whitebox_openbmc:
+    robotFile: "../platform/whitebox/openbmc/openbmc.robot"
+    outputDir: "output/whitebox/openbmc/"
+    title: "Whitebox_openbmc\\ Test"
+whitebox_titang2kiwi_ses:
+    robotFile : "../platform/whitebox/ses/titang2kiwi_ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "Whitebox_titang2kiwi_ses\\ Test"
+whitebox_titang2lenovo_ses:
+    robotFile : "../platform/whitebox/ses/titang2lenovo_ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "Whitebox_titang2lenovo_ses\\ Test"
+whitebox_nebulag2f_ses:
+    robotFile : "../platform/whitebox/ses/nebulag2f_ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "whitebox_nebulag2f_ses\\ Test"
+whitebox_titang2wb_ses:
+    robotFile : "../platform/whitebox/ses/titang2wb_ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "whitebox_titang2wb_ses\\ Test"
+whitebox_cronuswb_ses:
+    robotFile : "../platform/whitebox/ses/cronuswb_ses.robot"
+    outputDir : "output/whitebox/ses/"
+    title     : "whitebox_cronuswb_ses\\ Test"
+edk2_diag:
+    robotFile : " --variablefile ../platform/edk2/diag/GoogleDiagVariable.py ../platform/edk2/diag/edk2_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Google_edk2_diag\\ Test"
+
+edk2_sonic:
+    robotFile : " --variablefile ../platform/edk2/sonic/GoogleSonicVariable.py ../platform/edk2/sonic/edk2_sonic.robot"
+    outputDir : "output/sonic/"
+    title     : "Google_edk2_sonic\\ Test" 
+
+edk2_bios:
+    robotFile : " --variablefile ../platform/edk2/bios/BIOS_variable.py ../platform/edk2/bios/edk2_bios.robot"
+    outputDir : "output/bios/"
+    title     : "Google_edk2_bios\\ Test"
+
+minerva_openbmc:
+    robotFile : "../common/openbmc/minerva_bmc.robot"
+    outputDir : "output/openbmc/"
+    title     : "OpenBmc\\ Test"
+
+###Seastone V2 #####
+
+seastone_diag:
+    robotFile : " --variablefile ../platform/seastone/diag/SeastoneDiagVariable.py ../platform/seastone/diag/seastone_diag.robot"
+    outputDir : "output/diag/"
+    title     : "SeastoneV2_seastone_diag\\ Test"
+
+seastone_onl:
+    robotFile : " --variablefile ../platform/seastone/onl/ONL_variable.py ../platform/seastone/onl/seastone_onl.robot"
+    outputDir : "output/onl/"
+    title     : "SeastoneV2_seastone_onl\\ Test"
+
+seastone_bios:
+    robotFile : " --variablefile ../platform/seastone/bios/BIOS_variable.py ../platform/seastone/bios/seastone_bios.robot"
+    outputDir : "output/bios/"
+    title     : "SeastoneV2_seastone_bios\\ Test"
+
+
+seastone_sdk:
+    robotFile : " --variablefile ../platform/seastone/sdk/SeastoneSdkVariable.py ../platform/seastone/sdk/seastone_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "SeastoneV2_seastone_sdk\\ Test"
+
+seastone_bmc:
+    robotFile : " --variablefile ../platform/seastone/bmc/SeastoneBMCVariable.py ../platform/seastone/bmc/seastone_bmc.robot"
+    outputDir : "output/bmc/"
+    title     : "SeastoneV2_seastone_bmc\\ Test"
+
+seastone_sonic:
+    robotFile: "--variablefile ../platform/seastone/sonic/SeastoneSonicVariable.py ../platform/seastone/sonic/seastone_sonic.robot"
+    outputDir : "output/sonic/"
+    title     : "SeastoneV2_seastone_sonic\\ Test"
+
+seastone_onie:
+    robotFile: "--variablefile ../platform/seastone/onie/SeastoneOnieVariable.py ../platform/seastone/onie/seastone_onie.robot"
+    outputDir : "output/onie/"
+    title     : "SeastoneV2_seastone_onie\\ Test"
+
+### Moonstone ####
+moonstone_diag:
+    robotFile : " --variablefile ../platform/moonstone/diag/MoonstoneDiagVariable.py ../platform/moonstone/diag/moonstone_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Moonstone_diag\\ Test"
+
+moonstone_onl:
+    robotFile : " --variablefile ../platform/moonstone/onl/ONL_variable.py ../platform/moonstone/onl/moonstone_onl.robot"
+    outputDir : "output/onl/"
+    title     : "Moonstone_onl\\ Test"
+
+moonstone_bios:
+    robotFile : " --variablefile ../platform/moonstone/bios/BIOS_variable.py ../platform/moonstone/bios/moonstone_bios.robot"
+    outputDir : "output/bios/"
+    title     : "Moonstone_bios\\ Test"
+
+moonstone_sdk:
+    robotFile : " --variablefile ../platform/moonstone/sdk/MoonstoneSdkVariable.py ../platform/moonstone/sdk/moonstone_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Moonstone_sdk\\ Test"
+
+moonstone_bmc:
+    robotFile : " --variablefile ../platform/moonstone/bmc/MoonstoneBMCVariable.py ../platform/moonstone/bmc/moonstone_bmc.robot"
+    outputDir : "output/bmc/"
+    title     : "Moonstone_bmc\\ Test"
+
+moonstone_sonic:
+    robotFile: "--variablefile ../platform/moonstone/sonic/MoonstoneSonicVariable.py ../platform/moonstone/sonic/moonstone_sonic.robot"
+    outputDir : "output/sonic/"
+    title     : "Moonstone_sonic\\ Test"
+
+moonstone_onie:
+    robotFile: "--variablefile ../platform/moonstone/onie/MoonstoneOnieVariable.py ../platform/moonstone/onie/moonstone_onie.robot"
+    outputDir : "output/onie/"
+    title     : "Moonstone_onie\\ Test"
+
+minipack3_diag:
+    robotFile : "../common/diag/minipack3_diag.robot"
+    outputDir : "output/diag/"
+    title     : "MINIPACK3_Diag\\ Test"
+
+minipack3_sdk:
+    robotFile : "../common/sdk/minipack3_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "MINIPACK3_SDK\\ Test"
+
+minipack3_bsp:
+    robotFile : "../common/bsp/minipack3_bsp.robot"
+    outputDir : "output/bsp/"
+    title     : "MINIPACK3_BSP\\ Test"
+
+
+minerva_diag:
+    robotFile : "../common/diag/minerva_diag.robot"
+    outputDir : "output/diag/"
+    title     : "MINERVA_DIAG\\ Test"
+
+### Goldstone ####
+goldstone_diag:
+    robotFile : " --variablefile ../platform/goldstone/diag/GoldstoneDiagVariable.py ../platform/goldstone/diag/goldstone_diag.robot"
+    outputDir : "output/diag/"
+    title     : "Goldstone_diag\\ Test"
+
+goldstone_onl:
+    robotFile : " --variablefile ../platform/goldstone/onl/ONL_variable.py ../platform/goldstone/onl/goldstone_onl.robot"
+    outputDir : "output/onl/"
+    title     : "Goldstone_onl\\ Test"
+
+goldstone_bios:
+    robotFile : " --variablefile ../platform/goldstone/bios/BIOS_variable.py ../platform/goldstone/bios/goldstone_bios.robot"
+    outputDir : "output/bios/"
+    title     : "Goldstone_bios\\ Test"
+
+goldstone_sdk:
+    robotFile : " --variablefile ../platform/goldstone/sdk/GoldstoneSdkVariable.py ../platform/goldstone/sdk/goldstone_sdk.robot"
+    outputDir : "output/sdk/"
+    title     : "Goldstone_sdk\\ Test"
+
+goldstone_bmc:
+    robotFile : " --variablefile ../platform/goldstone/bmc/GoldstoneBMCVariable.py ../platform/goldstone/bmc/goldstone_bmc.robot"
+    outputDir : "output/bmc/"
+    title     : "Goldstone_bmc\\ Test"
+
+goldstone_sonic:
+    robotFile: "--variablefile ../platform/goldstone/sonic/GoldstoneSonicVariable.py ../platform/goldstone/sonic/goldstone_sonic.robot"
+    outputDir : "output/sonic/"
+    title     : "Goldstone_sonic\\ Test"
+
+goldstone_onie:
+    robotFile: "--variablefile ../platform/goldstone/onie/GoldstoneOnieVariable.py ../platform/goldstone/onie/goldstone_onie.robot"
+    outputDir : "output/onie/"
+    title     : "Goldstone_onie\\ Test"
+helga_sdk:
+    robotFile : " --variablefile ../platform/Helga/sdk/HelgaSdkVariable.py ../platform/Helga/sdk/helga_sdk.robot"
+    outputDir : "output/Helga_sdk/"
+    title     : "Helga_SDK\\ Test"

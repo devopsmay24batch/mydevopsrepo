@@ -1,0 +1,17 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2021, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+# this config file used to define how many times the cases need to run
+MaxLoopNum_1000 : 1001
+MaxLoopNum_500 : 501
+MaxLoopNum_50 : 51
+MaxLoopNum_5  : 6
+prbs_rx_31_25g_43200_cmd : 'diagtest serdes prbs rx all all prbs31 25g 43200'
+prbs_rx_31_10g_43200_cmd : 'diagtest serdes prbs rx all all prbs31 10g 43200'

@@ -1,0 +1,632 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+cloudripper_2208 :
+    name    : cloudripper_2208
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2208
+    bmcConsoleIP     : 10.204.112.63
+    bmcConsolePort   : 2208
+    # for cloudripper, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['sol.sh \r\n']
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.77
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : 15
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : 'Grub'
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+cloudripper_2214 :
+    name    : cloudripper_2214
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2214
+    bmcConsoleIP     : 10.204.112.63
+    bmcConsolePort   : 2214
+    # for cloudripper, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['sol.sh \r\n']
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.77
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : 15
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : 'Grub'
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_d1 :
+    name    : wedge400c_d1
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.203
+    consolePort     : 10014
+    bmcConsoleIP     : 192.168.0.203
+    bmcConsolePort   : 10014
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['sol.sh \r\n']
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.77
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : 15
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : 'Grub'
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_d2 :
+    name    : wedge400c_d2
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.203
+    consolePort     : 10015
+    bmcConsoleIP     : 192.168.0.203
+    bmcConsolePort   : 10015
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \r\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.77
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler1
+    powerCyclerPort : 3
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_d3 :
+    name    : wedge400c_d3
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.236
+    consolePort     : 10002
+    bmcConsoleIP     : 192.168.0.236
+    bmcConsolePort   : 10002
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \r\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.82.11
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    # powered by PEM, no powerCycler
+    powerCycler: powerCycler1
+    powerCyclerPort : 0
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost '
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_d4 :
+    name    : wedge400c_d4
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.240
+    consolePort     : 10005
+    bmcConsoleIP     : 192.168.0.240
+    bmcConsolePort   : 10005
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \r\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.77
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler1
+    powerCyclerPort : 3
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_1 :
+    name    : wedge400c_1
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.69
+    consolePort     : 5212
+    bmcConsoleIP    : 10.204.112.69
+    bmcConsolePort  : 5212
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.79
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler3
+    powerCyclerPort : 23
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_2 :
+    name    : wedge400c_2
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2206
+    bmcConsoleIP    : 10.204.112.63
+    bmcConsolePort  : 2206
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.113.84
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler4
+    powerCyclerPort : 5
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@.*:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'login:'
+wedge400c_3 :
+    name    : wedge400c_3
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.62
+    consolePort     : 2108
+    bmcConsoleIP    : 10.204.112.62
+    bmcConsolePort  : 2108
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.175
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler2
+    powerCyclerPort : 3
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_4 :
+    name    : wedge400c_4
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2208
+    bmcConsoleIP    : 10.204.112.63
+    bmcConsolePort  : 2208
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.174
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler2
+    powerCyclerPort : 2
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost '
+    promptGrub      : Grub
+    promptBmc       : 'root@sonic:'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'sonic.asia.ad.celestica.com login:'
+minipack2_2208 :
+    name    : minipack2_2208
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2208
+    bmcConsoleIP    : 10.204.112.63
+    bmcConsolePort  : 2208
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 10.204.112.174
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler2
+    powerCyclerPort : 2
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@fb7056fc '
+    promptGrub      : Grub
+    promptBmc       : 'root@.*'
+    loginPromptDiagOS : 'fb7056fc login:'
+    loginPromptBmc  : 'login:'
+wedge400c_e2-02 :
+    name    : wedge400c_e2-02
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.203
+    consolePort     : 10010
+    bmcConsoleIP    : 192.168.0.203
+    bmcConsolePort  : 10010
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.245
+    managementMask  : 255.255.255.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler4
+    powerCyclerPort : 5
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+wedge400c_d1-21 :
+    name    : wedge400c_d1-21
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.235
+    consolePort     : 10010
+    bmcConsoleIP    : 192.168.0.235
+    bmcConsolePort  : 10010
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.78
+    managementMask  : 255.255.255.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler: powerCycler4
+    powerCyclerPort : 15
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : '\[root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'localhost login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+S5224F :
+    name    : S5224F
+    os      : diagos
+    deviceType      : DUT
+    consoleIP       : 10.204.112.62
+    consolePort     : 2107
+    bmcConsoleIP    : 10.204.112.62
+    bmcConsolePort  : 2107
+    # for dell Prenceton, switch to BMC: ctrl+g+e+o and d, switch to CPU: ctrl+g+e+o and b
+    keysSwitchToCpu: ["\x07","\x05","\x0f", "b"]
+    keysSwitchToBmc: ["\x07","\x05","\x0f", "d"]
+    userName        : root
+    password        : 'calvin'
+    rootUserName    : root
+    rootPassword    : 'calvin'
+    bmcUserName: sysadmin
+    bmcPassword: 'superuser'
+    managementIP    : 10.204.112.77
+    managementMask  : 255.255.254.0
+    platform         : dell
+    managementInterface : eth0
+    powerCycler     : powerCycler2
+    powerCyclerPort : 18
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList         : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : 'dellemc-diag-os:'
+    promptGrub      : 'grub>'
+    promptBmc       : ' #'
+    loginPromptDiagOS : 'dellemc-diag-os login'
+    loginPromptBmc  : 'BMC00A0C9546271 login'
+S5232F :
+    name    : S5232F
+    os      : diagos
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2207
+    bmcConsoleIP    : 10.204.112.63
+    bmcConsolePort  : 2110
+    keysSwitchToCpu: ["\x07","\x05","\x0f", "b"]
+    keysSwitchToBmc: ["\x07","\x05","\x0f", "d"]
+    userName        : root
+    password        : 'calvin'
+    rootUserName    : root
+    rootPassword    : 'calvin'
+    bmcUserName: sysadmin
+    bmcPassword: 'superuser'
+    managementIP    : 10.204.112.79
+    managementMask  : 255.255.254.0
+    platform         : dell
+    managementInterface : eth0
+    powerCycler     : powerCycler2
+    powerCyclerPort : 14
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList         : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : 'dellemc-diag-os:'
+    promptGrub      : 'grub>'
+    promptBmc       : ' #'
+    loginPromptDiagOS : 'dellemc-diag-os login'
+    loginPromptBmc  : 'BMC00A0C9546271 login'
+minipack2_10010 :
+    name    : minipack2_10010
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.240
+    consolePort     : 10010
+    bmcConsoleIP     : 192.168.0.240
+    bmcConsolePort   : 10010
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['sol.sh \r\n']
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : 15
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : 'root@fb8396dd '
+    promptGrub      : 'Grub'
+    promptBmc       : 'root@.*:'
+    loginPromptDiagOS : 'fb8396dd login'
+    loginPromptBmc  : 'login:'
+minipack2_10007 :
+    name    : minipack2_10007
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 192.168.0.240
+    consolePort     : 10007
+    bmcConsoleIP     : 192.168.0.240
+    bmcConsolePort   : 10007
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ['sol.sh \r\n']
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '11'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.34
+    managementMask  : 255.255.254.0
+    platform         : facebook
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : 15
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : 'root@fb971d4a '
+    promptGrub      : 'Grub'
+    promptBmc       : 'root@bmc-oob:'
+    loginPromptDiagOS : 'fb971d4a login'
+    loginPromptBmc  : 'bmc-oob.? login:'
+S5248F :
+    name    : S5248F
+    os      : diagos
+    deviceType      : DUT
+    consoleIP       : 10.204.112.63
+    consolePort     : 2202
+    bmcConsoleIP    : 10.204.112.63
+    bmcConsolePort  : 2110
+    keysSwitchToCpu: ["\x07","\x05","\x0f", "b"]
+    keysSwitchToBmc: ["\x07","\x05","\x0f", "d"]
+    userName        : root
+    password        : 'calvin'
+    rootUserName    : root
+    rootPassword    : 'calvin'
+    bmcUserName: sysadmin
+    bmcPassword: 'superuser'
+    managementIP    : 10.204.112.80
+    managementMask  : 255.255.254.0
+    platform         : dell
+    managementInterface : eth0
+    powerCycler     : powerCycler2
+    powerCyclerPort : 17
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList         : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:/'
+    promptDiagOS    : 'dellemc-diag-os:'
+    promptGrub      : 'grub>'
+    promptBmc       : ' #'
+    loginPromptDiagOS : 'dellemc-diag-os login'
+    loginPromptBmc  : 'BMC00A0C9546271 login'
+tyr_1 :
+    name    : tyr_1
+    os      : sonic
+    deviceType      : DUT
+    consoleIP       : 10.204.112.120
+    consolePort     : 4004
+    bmcConsoleIP    : 10.204.112.120
+    bmcConsolePort  : 4004
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '111111'
+    bmcUserName:  root
+    bmcPassword: '111111'
+    managementIP    : 10.204.30.168
+    managementMask  : 255.255.254.0
+    platform         : whitebox
+    managementInterface : eth0
+    powerCycler: powerCycler2
+    powerCyclerPort : 2
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'xx'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'xx'
+PC :
+   name            : PC
+   deviceType      : server
+   platform        : ubuntu
+   username        : root
+   password        : '123456'
+   rootUserName    : root
+   rootPassword    : '123456'
+   scpUsername     : 'root'
+   scpPassword     : '123456'
+   managementIP    : 192.168.0.179
+   managementIPV6  : '2001:db8:0:1::2'
+   staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+   prompt          : 'cap-PowerEdge-R720'
+JENKINS :
+   name            : JENKINS
+   deviceType      : server
+   platform        : ubuntu
+   username        : 'None'
+   password        : 'None'
+   rootUserName    : 'None'
+   rootPassword    : 'None'
+   scpUsername     : 'root'
+   scpPassword     : '123456'
+   managementIP    : 192.168.0.179
+   managementIPV6  : '2001:db8:0:1::2'
+   staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+   prompt          : 'None'
+platforms:
+    facebook:
+        email_group : [xiaoqwa@celestica.com]
+    alibaba:
+        email_group : [xiaoqwa@celestica.com]
+        

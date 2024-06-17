@@ -1,0 +1,166 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+
+### for Migaloo test
+
+BMC_EEPROM_TEST:
+    Board Mfg             : 'Celestica1'
+    Board Product         : 'BMC Board'
+    Board Serial          : 'SN123456'
+    Board Part Number     : 'R3130-G1114-01'
+    Board Extra_1         : '01'
+
+BMC_EEPROM_TEST2:
+    Board Mfg             : 'Celestica2'
+    Board Product         : 'BMC Board'
+    Board Serial          : 'SN567890'
+    Board Part Number     : 'R3130-G2224-02'
+    Board Extra_1         : '02'
+
+SYS_EEPROM_TEST:
+    Board Mfg             : 'Celestica1'
+    Board Product         : 'Base Board'
+    Board Serial          : 'R3174-G0004-02GD20B30017'
+    Board Part Number     : 'R3174-G0004-01'
+    Board Extra_1         : '01'
+    Product Manufacturer  : 'Celestica1'
+    Product Name          : 'AS24-128D-CL1'
+    Product Part Number   : 'AS24-128D-CL1'
+    Product Version       : '01'
+    Product Serial        : 'CLMFCL020C181111'
+    Product Extra_1       : 'F2B'
+    Product Extra_2       : '0C:48:C6:87:03:1A'
+    Product Extra_3       : '01'
+    Product Extra_4       : 'AS24-128D'
+
+SYS_EEPROM_TEST2:
+    Board Mfg             : 'Celestica2'
+    Board Product         : 'Base Board'
+    Board Serial          : 'R3174-G0004-02GD20B41128'
+    Board Part Number     : 'R3174-G0004-02'
+    Board Extra_1         : '02'
+    Product Manufacturer  : 'Celestica2'
+    Product Name          : 'AS24-128D-CL2'
+    Product Part Number   : 'AS24-128D-CL2'
+    Product Version       : '02'
+    Product Serial        : 'CLMFCL020C182221'
+    Product Extra_1       : 'F2B'
+    Product Extra_2       : '0C:48:C6:87:03:1A'
+    Product Extra_3       : '02'
+    Product Extra_4       : 'AS24-128D'
+
+FAN_EEPROM_TEST:
+    Product Manufacturer  : 'Celestica1'
+    Product Name          : 'FAN Module'
+    Product Part Number   : 'FA122A04-K2K'
+    Product Version       : '1'
+    Product Serial        : 'SN123456'
+    Product Extra_1       : 'YYYY-MM-DD'
+
+FAN_EEPROM_TEST2:
+    Product Manufacturer  : 'Celestica2'
+    Product Name          : 'FAN Module'
+    Product Part Number   : 'FA122A04-J4J'
+    Product Version       : '2'
+    Product Serial        : 'SN567890'
+    Product Extra_1       : 'YYYY-MM-DD'
+
+FCB_EEPROM_TEST:
+    Board Mfg             : 'Celestica1'
+    Board Product         : 'FCB Board'
+    Board Serial          : 'SN123456'
+    Board Part Number     : 'R3174-G0006-01'
+    Board Extra_1         : '04'
+
+FCB_EEPROM_TEST2:
+    Board Mfg             : 'Celestica2'
+    Board Product         : 'FCB Board'
+    Board Serial          : 'SN567890'
+    Board Part Number     : 'R3174-G0006-02'
+    Board Extra_1         : '05'
+
+COME_EEPROM_TEST:
+    Board Mfg             : 'Celestica1'
+    Board Product         : 'COMe CPU Board'
+    Board Serial          : 'SN123456'
+    Board Part Number     : 'R3129-G0002-01'
+    Board Extra_1         : '04'
+
+COME_EEPROM_TEST2:
+    Board Mfg             : 'Celestica2'
+    Board Product         : 'COMe CPU Board'
+    Board Serial          : 'SN567890'
+    Board Part Number     : 'R3129-G0002-02'
+    Board Extra_1         : '05'
+
+SWITCH_EEPROM_TEST:
+    Board Mfg             : 'Celestica1'
+    Board Product         : 'Switch Board'
+    Board Serial          : 'SN123456'
+    Board Part Number     : 'R3174-G0001-01'
+    Board Extra_1         : '04'
+
+SWITCH_EEPROM_TEST2:
+    Board Mfg             : 'Celestica2'
+    Board Product         : 'Switch Board'
+    Board Serial          : 'SN567890'
+    Board Part Number     : 'R3174-G0001-02'
+    Board Extra_1         : '05'
+
+TLV_EEPROM_INFO:
+    Product Name            : 'AS24-128D-CL'
+    Part Number             : 'R3174-F9001-02'
+    Device Version          : '6'
+    Label Revision          : 'Migaloo'
+    Platform Name           : 'x86_64-alibaba_as24-128d-cl-r0'
+    MAC Addresses           : '4'
+    Manufacturer            : 'Celestica'
+    Manufacture Country     : 'CHN'
+    Vendor Name             : 'Alibaba'
+    Service Tag             : 'AS24-128D'
+
+SMBIOS_EEPROM_TEST:
+    chassis_type          : 'A'
+    chassis_serial_number : 'SN12345678'
+    chassis_manufacture   : 'Celestica'
+    chassis_version       : '01'
+    chassis_asset_tag     : 'PLEASE-UPDATE'
+    board_manufacture     : 'Celestica'
+    board_product_name    : 'R3174-G0002-01'
+    board_serial_number   : 'SN12345678'
+    board_asset_tag       : 'R3129-G0002-01'
+    board_location        : 'Location'
+    product_manufecture   : 'Celestica'
+    product_name          : 'AS14-40D-F'
+    product_version       : '03'
+    product_serial_number : 'SN12345678'
+    product_system_UUID   : '0x0102030405060708090a0b0c0d0e0f'
+    product_SKU_number    : 'R1241-F0001-01'
+    product_family_name   : 'Migaloo'
+
+SMBIOS_EEPROM_TEST2:
+    chassis_type          : 'B'
+    chassis_serial_number : 'SN12345000'
+    chassis_manufacture   : 'celestica'
+    chassis_version       : '03'
+    chassis_asset_tag     : 'PLEASE-UPDATE'
+    board_manufacture     : 'celestica'
+    board_product_name    : 'R3174-G0004-02'
+    board_serial_number   : 'SN12345000'
+    board_asset_tag       : 'R3129-G0002-02'
+    board_location        : 'CHN'
+    product_manufecture   : 'celestica'
+    product_name          : 'AS14-40D-F'
+    product_version       : '01'
+    product_serial_number : 'SN12345000'
+    product_system_UUID   : '0x0102030405060708090a0b0c0d0e0f'
+    product_SKU_number    : 'R3130-G0002-01'
+    product_family_name   : 'migaloo'
