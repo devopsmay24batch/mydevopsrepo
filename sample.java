@@ -11,5 +11,5 @@ class HelloWorld
 
 //execute java file today with the build step.
 //this is the demo before adding build step.
-//execute java file today for devopsproject 2
-//its devopsproject2 file
+//execute java file today for devopsproject2 
+//its devopsproject2 file for submission
