@@ -3,8 +3,8 @@ class HelloWorld
 {
     public static void main(String []args)
     {
-        System.out.println("Java sample code that runs from Jenkins.");
-        System.out.println("Added second line to check Poll SCM option - one last time!!.");
+        System.out.println("Devopsmay24 batch sandesh that runs from Jenkins.");
+        System.out.println("Creating CI CD Pipeline for project 2.");
     }
     
 };
