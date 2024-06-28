@@ -5,14 +5,14 @@ pipeline {
         registryCredentials = 'dockerhub_credentials'
         dockerImage = 'sandeshyashlaha/devopsproject2/pythonapp'
         dockerTag = 'latest'
-        dockerfilePath = './path/to/Dockerfile'
+        dockerfilePath = 'Dockerfile'  // Assuming Dockerfile is at the root of the repository
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git 'https://github.com/sandeshdevops/mydevopsrepo1/jenkins.git'
+                git 'https://github.com/sandeshdevops/mydevopsrepo1.git'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 // Build Docker image
                 script {
-                    dockerImage = docker.build("${dockerImage}:${dockerTag}", "--file ${dockerfilePath} .")
+                    dockerImage = docker.build("${dockerImage}:${dockerTag}", "-f ${dockerfilePath} .")
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
                 // Example: Run tests inside the Docker container
                 script {
                     dockerImage.inside {
-                        sh 'python test.py'
+                        sh 'python test.py'  // Adjust this command based on your actual test script
                     }
                 }
             }
