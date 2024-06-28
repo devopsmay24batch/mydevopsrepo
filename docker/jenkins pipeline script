@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    environment {
+        // Define Docker registry credentials (if needed)
+        registryCredentials = 'dockerhub_credentials'
+        // Define Docker image details
+        imageName = 'yourdockerhubusername/pythonapp'
+        imageTag = 'latest'
+        // Dockerfile location relative to the Jenkins workspace
+        dockerfilePath = './path/to/Dockerfile'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                // Clean workspace
+                cleanWs()
+                
+                // Checkout code from your repository
+                git 'https://github.com/your/repository.git'
+
+                // Build Docker image
+                script {
+                    dockerImage = docker.build("${imageName}:${imageTag}", "--file ${dockerfilePath} .")
+                }
+            }
+        }
+
+        stage('Pull') {
+            steps {
+                // Pull an existing Docker image (optional)
+                script {
+                    dockerImage.pull()
+                }
+            }
+        }
+
+        stage('Push') {
+            steps {
+                // Push Docker image to registry
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', registryCredentials) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded! Docker image built, pulled, and pushed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed! Check the Jenkins console output for details.'
+        }
+    }
+}
