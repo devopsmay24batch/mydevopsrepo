@@ -2,43 +2,43 @@ pipeline {
     agent any
 
     environment {
-        // Define Docker registry credentials (if needed)
         registryCredentials = 'dockerhub_credentials'
-        // Define Docker image details
-        imageName = 'yourdockerhubusername/pythonapp'
-        imageTag = 'latest'
-        // Dockerfile location relative to the Jenkins workspace
+        dockerImage = 'sandeshyashlaha/devopsproject2/pythonapp'
+        dockerTag = 'latest'
         dockerfilePath = './path/to/Dockerfile'
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from GitHub
+                git 'https://github.com/your/repository.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                // Clean workspace
-                cleanWs()
-                
-                // Checkout code from your repository
-                git 'https://github.com/your/repository.git'
-
                 // Build Docker image
                 script {
-                    dockerImage = docker.build("${imageName}:${imageTag}", "--file ${dockerfilePath} .")
+                    dockerImage = docker.build("${dockerImage}:${dockerTag}", "--file ${dockerfilePath} .")
                 }
             }
         }
 
-        stage('Pull') {
+        stage('Test') {
             steps {
-                // Pull an existing Docker image (optional)
+                // Example: Run tests inside the Docker container
                 script {
-                    dockerImage.pull()
+                    dockerImage.inside {
+                        sh 'python test.py'
+                    }
                 }
             }
         }
 
         stage('Push') {
             steps {
-                // Push Docker image to registry
+                // Push Docker image to Docker Hub
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', registryCredentials) {
                         dockerImage.push()
@@ -50,7 +50,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline succeeded! Docker image built, pulled, and pushed successfully.'
+            echo 'Pipeline succeeded! Docker image built, tested, and pushed successfully.'
         }
         failure {
             echo 'Pipeline failed! Check the Jenkins console output for details.'
