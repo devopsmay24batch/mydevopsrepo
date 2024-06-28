@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git 'https://github.com/sandeshdevops/mydevopsrepo1/docker.git'
+                git 'https://github.com/sandeshdevops/mydevopsrepo1/jenkins.git'
             }
         }
 
