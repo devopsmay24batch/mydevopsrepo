@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    environment {
+        registryCredentials = 'dockerhub_credentials'
+        dockerImage = 'sandeshyashlaha/devopsproject2/pythonapp'
+        dockerTag = 'latest'
+        dockerfilePath = './path/to/Dockerfile'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from GitHub
+                git 'https://github.com/sandeshdevops/mydevopsrepo1/docker.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build Docker image
+                script {
+                    dockerImage = docker.build("${dockerImage}:${dockerTag}", "--file ${dockerfilePath} .")
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Example: Run tests inside the Docker container
+                script {
+                    dockerImage.inside {
+                        sh 'python test.py'
+                    }
+                }
+            }
+        }
+
+        stage('Push') {
+            steps {
+                // Push Docker image to Docker Hub
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', registryCredentials) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded! Docker image built, tested, and pushed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed! Check the Jenkins console output for details.'
+        }
+    }
+}
