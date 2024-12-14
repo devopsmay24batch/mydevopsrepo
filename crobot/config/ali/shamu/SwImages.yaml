@@ -1,0 +1,353 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2020-2022, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BMC:
+    name            :  BMC
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/BMC'
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp/BMC/'
+    imageServer     : PC
+    oldImage        : 'flash-obmc-cl_v2.0.0'
+    newImage        : 'flash-obmc-cl_v2.0.1'
+    oldVersion      : '2.0.0'
+    newVersion      : '2.0.1'
+
+DIAG:
+    name            :  DIAG
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/DIAG'
+    isAutoBuild     : false
+    imageInfoFile    : ImageInfo.yaml
+    localImageDir   : '/tmp/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R3130-J0023-03_Ali_Diag_V2.0.2.deb'
+    oldVersion      : ''
+    newVersion      : '2.0.2'
+
+SDK                 :
+    name            :  SDK
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/SDK'
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R3130-M0150-01_V1.7.2_Shamu_SDK.zip'
+    oldVersion      : ''
+    newVersion      : '1.7.2'
+
+BASE_CPLD:
+    name            :  BASE_CPLD
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : 'Shamu_CTRL_CPLD_V10_20210310.vme'
+    newImage        : 'Shamu_CTRL_CPLD_V11_20210715.vme'
+    oldVersion      : '0x10'
+    newVersion      : '0x11'
+
+COME_CPLD:
+    name            :  COME_CPLD
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : 'Shamu_COMe_CPLD_V14_20210218.vme'
+    newImage        : 'Shamu_COMe_CPLD_V14_20210218.vme'
+    oldVersion      : '0x14'
+    newVersion      : '0x14'
+
+SWITCH_CPLD:
+    name            :  SWITCH_CPLD
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : 'Shamu_PORT_CPLD1_PORT_CPLD2_V07_20210308.vme'
+    newImage        : 'Shamu_PORT_CPLD1_PORT_CPLD2_V07_20210308.vme'
+    oldVersion      : '0x07'
+    newVersion      : '0x07'
+
+FAN_CPLD:
+    name            :  FAN_CPLD
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : 'Shamu_FAN_CPLD_V03_20210218.vme'
+    newImage        : 'Shamu_FAN_CPLD_V03_20210218.vme'
+    oldVersion      : 'V0x3'
+    newVersion      : 'V0x3'
+
+FAN_CPLD_REFRESH:
+    name            :  FAN_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Shamu_FAN_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+BASE_CPLD_REFRESH:
+    name            :  BASE_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Shamu_CTRL_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+CPU_CPLD_REFRESH:
+    name            :  CPU_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Shamu_COMe_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+SWITCH_CPLD_REFRESH:
+    name            :  SWITCH_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Shamu_PORT_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+DIAGOS:
+    name            :  DIAGOS
+    hostImageDir    : 'shamu/image/DIAGOS'
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'sonic-broadcom_1.2.3.bin'
+    newImage        : 'sonic-broadcom_1.2.4.bin'
+    oldVersion      : '1.2.3'
+    newVersion      : '1.2.4'
+
+ONIE_INSTALLER:
+    name            :  ONIE_INSTALLER
+    hostImageDir    : 'shamu/image/ONIE'
+    isAutoBuild     : false
+    imageInfoFile    : ImageInfo.yaml
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-recovery-x86_64-alibaba_as24-128d-cl-r0.iso'
+    newImage        : 'onie-recovery-x86_64-alibaba_as24-128d-cl-r0.iso'
+    oldVersion      : '2019.02.01.0.0.1'
+    newVersion      : '2019.02.01.0.0.1'
+
+ONIE_UPDATER:
+    name            :  ONIE_UPDATER
+    hostImageDir    : 'shamu/image/ONIE'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : ImageInfo.yaml       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-x86_64-alibaba_as14-40d-cl-r0'
+    newImage        : 'onie-updater-x86_64-alibaba_as14-40d-cl-r0'
+    oldVersion      : '2019.02.01.0.0.1'
+    newVersion      : '2019.02.01.0.0.1'
+
+FPGA:
+    name            :  FPGA
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/FPGA'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'Shamu_FPGA_PRIMARY_v1000_0013_20210308.bin'
+    newImage        : 'Shamu_FPGA_PRIMARY_v1000_0013_20210308.bin'
+    oldVersion      : '0x10000013'
+    newVersion      : '0x10000013'
+
+FPGA_MULTBOOT:
+    name            :  FPGA_MULTBOOT
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/FPGA'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'Shamu_FPGA_MULTBOOT_For_BMC_Online_V1000_0013_20210308.bin'
+    newImage        : 'Shamu_FPGA_MULTBOOT_For_BMC_Online_V1000_0013_20210308.bin'
+    oldVersion      : '0x10000013'
+    newVersion      : '0x10000013'
+
+BIOS:
+    name            :  BIOS
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/BIOS'
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp/BIOS'
+    imageServer     : PC
+    oldImage        : 'Ali_Shamu_Migaloo_B2C.1.00.06.bin'
+    newImage        : 'Ali_Shamu_Migaloo_B2C.1.00.07.bin'
+    oldVersion      : '1.00.06'
+    newVersion      : '1.00.07'
+
+AFU_TOOL:
+    name            :  AFU_TOOL
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'AfuEfix64.efi'
+    oldVersion      : ''
+    newVersion      : ''
+
+TH4_PCIE_FLASH      :
+    name            : TH4_PCIE_FLASH
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /var/lib/tftpboot/shamu/image/TH4
+    imageServer     : PC
+    oldImage        : 'pciefw-r5-m7.bin'
+    newImage        : Shamu_bcm56780_pciefw-r5-m7-v2.8.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.8001'
+        PCIe FW version       : 'E001_09'
+    newVersion      :
+        PCIe FW loader version : '2.9'
+        PCIe FW version       : 'D000_05'
+
+PCIE_FLASH_SHAMU    :
+    name            : PCIE_FLASH_SHAMU
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/PCIE'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/PCIE'
+    imageServer     : PC
+    oldImage        : 'Shamu_bcm56780_pciefw-r5-m7-v2.8.bin'
+    newImage        : 'Shamu_bcm56780_pciefw-r5-m7-v2.8.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.8'
+        PCIe FW version       : 'D000_05'
+    newVersion      :
+        PCIe FW loader version : '2.8'
+        PCIe FW version       : 'D000_05'
+
+BIOS_FRU_EEPROM_INTERNAL :
+    name            :  BIOS_FRU_EEPROM_INTERNAL
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'shamu-internal-09.bin'
+    oldVersion      : ''
+    newVersion      : '0.9'
+
+BCM5387             :
+    name            :  BCM5387
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BCM5387'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'bcm5387_fishbone48_new.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+TH4                 :
+    name            :  TH4
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/TH4'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'th4.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+ME_FIRMWARE :
+    name            : ME_FIRMWARE
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.0.3.59'
+
+BDX_DE_LINUX :
+    name            : BDX_DE_LINUX
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'BDX_DE_Linux_2.0.zip'
+    oldVersion      : ''
+    newVersion      : ''
+
+RU :
+    name            : RU
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'RU_EFI.zip'
+    oldVersion      : ''
+    newVersion      : ''
+POWER_IMAGE_LOADLINE :
+    name            : RU
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/powerImage/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'loadlineImage_20210609.txt'
+    oldVersion      : ''
+    newVersion      : ''
+
+POWER_IMAGE_NO_LOADLINE :
+    name            : RU
+    hostImageDir    : '/var/lib/tftpboot/shamu/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/powerImage/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'no_loadlineImage_20201023.txt'
+    oldVersion      : ''
+    newVersion      : ''
+

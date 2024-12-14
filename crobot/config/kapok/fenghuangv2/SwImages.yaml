@@ -1,0 +1,208 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2020-2021, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+ONIE_Installer:
+    name            :  ONIE_Installer
+    hostImageDir    : 'fenghuangv2/bsp/images/onie'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'celestica_cs8260-r0.itb'
+    newImage        : 'celestica_cs8260-r0.itb'
+    oldVersion      : '2017.11.004-dirty'
+    newVersion      : '2017.11.005'
+
+ONIE_updater:
+    name            :  ONIE_updater
+    oldhostImageDir : 'fenghuangv2/bsp/images/onie'
+    hostImageDir    : ''
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-arm64-celestica_cs8260-r0'
+    newImage        : 'onie-updater-arm64-celestica_cs8260-r0'
+    oldVersion      : '2017.11.004-dirty'
+    newVersion      : '2017.11.005'
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : 'fenghuangv2/bsp/images/onie'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-arm64-celestica_cs8260-r0'
+    newImage        : 'onie-updater-arm64-celestica_cs8260-r0'
+    oldVersion      :
+        SYSCPLD     : "0x0018"
+        LEDCPLD1    : "0x04"
+        LEDCPLD2    : "0x04"
+        FANCPLD     : "3"
+    newVersion      :
+        SYSCPLD     : "0x0018"
+        LEDCPLD1    : "0x04"
+        LEDCPLD2    : "0x04"
+        FANCPLD     : "3"
+
+SYS_CPLD:
+    name            :  SYS_CPLD
+    hostImageDir    : 'fenghuangv2/bsp/fw'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/root/vmetool'
+    imageServer     : PC
+    oldImage        : 'fhv2_sys_cpld_v18_0327.vme'
+    newImage        : 'fhv2_sys_cpld_v18_0327.vme'
+    oldVersion      : '0x18'
+    newVersion      : '0x18'
+
+FAN_CPLD:
+    name            :  FAN_CPLD
+    hostImageDir    : 'fenghuangv2/bsp/fw'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/root/vmetool'
+    imageServer     : PC
+    oldImage        : 'FENGHUANG_CPLD_FAN_impl1_V03.vme'
+    newImage        : 'FENGHUANG_CPLD_FAN_impl1_V03.vme'
+    oldVersion      : '0x03'
+    newVersion      : '0x03'
+
+UBOOT:
+    name            :  UBOOT
+    hostImageDir    : 'fenghuangv2/bsp/images/uboot'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'celestica_cs8260-boot.img'
+    oldVersion      : 'U-Boot 2018.05-alpine_db-v3.65.1-HAL (Apr 08 2021 - 09:30:42 +0000) - ONIE 2017.11.004-dirty'
+    newVersion      : 'U-Boot 2018.05-alpine_db-v3.65.1-HAL (Apr 21 2021 - 08:54:15 +0000) - ONIE 2017.11.005'
+
+BSP_DRIVER:
+    name            :  BSP_DRIVER
+    hostImageDir    : /var/lib/tftpboot/fenghuangv2/bsp/driver
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/driver'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'driver.tar.xz'
+    oldVersion      : ''
+    newVersion      : '0.0.3'
+
+DIAGOS:
+    name            :  DIAGOS
+    hostImageDir    : 'fenghuangv2/diagos'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/mnt'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'onie-diagos-installer-arm64-celestica_cs8260-r0.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+SDK:
+    name            :  SDK
+    hostImageDir    : 'fenghuangv2/sdk'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R3247-J0001-01_V0.0.3_FenghuangV2_SDK'
+    oldVersion      : ''
+    newVersion      : '0.0.3'
+
+1PPS_FPGA:
+    name            :  1PPS_FPGA
+    hostImageDir    : 'fenghuangv2/fw'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/fw'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'rona_fpga1pps_multiboot_v0B.01.07h_20210108.bin'
+    oldVersion      : ''
+    newVersion      : '0x107'
+
+I2C_FPGA:
+    name            :  I2C_FPGA
+    hostImageDir    : 'fenghuangv2/fw'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/fw'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'fpgai2c_v0B.00.09h_20210303_bin.bin'
+    oldVersion      : ''
+    newVersion      : '0xB00'
+
+UC:
+    name            :  UC
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      :
+        uC_app      : "2.1.14"
+        uC_bl       : "2.28"
+    newVersion      :
+        uC_app      : "2.1.14"
+        uC_bl       : "2.28"
+
+1PPS_ASC:
+    name            :  1PPS_ASC
+    hostImageDir    : 'fenghuangv2/fw'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/fw'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    #i2c-fpga version
+    1pps            : '0x107'
+    fpga            : '0x9'
+    oldVersion      :
+        ASC10-0     : "b49d"
+        ASC10-1     : "d5c0"
+        ASC10-2     : "a444"
+    newVersion      :
+        ASC10-0     : "b49d"
+        ASC10-1     : "58f7"
+        ASC10-2     : "a444"
+
+I2C_ASC:
+    name            :  I2C_ASC
+    hostImageDir    : 'fenghuangv2/fw'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/fw'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    #i2c-fpga version
+    1pps            : '0x107'
+    fpga            : '0x9'
+    oldVersion      :
+        ASC10-0     : "b49d"
+        ASC10-1     : "d5c0"
+        ASC10-2     : "a444"
+    newVersion      :
+        ASC10-0     : "b49d"
+        ASC10-1     : "58f7"
+        ASC10-2     : "80d4"

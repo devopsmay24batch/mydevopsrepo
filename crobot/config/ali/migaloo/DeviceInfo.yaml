@@ -1,0 +1,260 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+migaloo_10001 :
+    name    : migaloo_10001
+    os      : Ubuntu
+    deviceType      : DUT
+    consoleIP       : 192.168.0.244
+    consolePort     : 10001
+    bmcConsoleIP     : 192.168.0.244
+    bmcConsolePort   : 10001
+    # switch to BMC: ctrl+u and 2, switch to CPU: ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName        : admin
+    password        : admin
+    rootUserName    : admin
+    rootPassword    : 'admin'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : ali
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : [3, 4]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+migaloo_10002 :
+    name    : migaloo_10002
+    os      : Ubuntu
+    deviceType      : DUT
+    consoleIP       : 192.168.0.244
+    consolePort     : 10002
+    bmcConsoleIP     : 192.168.0.244
+    bmcConsolePort   : 10002
+    # switch to BMC: ctrl+u and 2, switch to CPU: ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName        : admin
+    password        : admin
+    rootUserName    : admin
+    rootPassword    : 'admin'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : ali
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : [20, 21]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+migaloo_10008 :
+    name    : migaloo_10008
+    os      : Ubuntu
+    deviceType      : DUT
+    consoleIP       : 192.168.0.244
+    consolePort     : 10008
+    bmcConsoleIP     : 192.168.0.244
+    bmcConsolePort   : 10008
+    # switch to BMC: ctrl+u and 2, switch to CPU: ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName        : admin
+    password        : admin
+    rootUserName    : admin
+    rootPassword    : 'admin'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : ali
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : [22, 23]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+migaloo_4001 :
+    name    : migaloo_4001
+    os      : Ubuntu
+    deviceType      : DUT
+    consoleIP       : 10.194.77.14
+    consolePort     : 4001
+    bmcConsoleIP     : 10.194.77.14
+    bmcConsolePort   : 4001
+    # switch to BMC: ctrl+u and 2, switch to CPU: ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName        : admin
+    password        : admin
+    rootUserName    : admin
+    rootPassword    : 'admin'
+    bmcUserName:  root
+    bmcPassword: '0penBmc'
+    managementIP    : 192.168.0.33
+    managementMask  : 255.255.254.0
+    platform         : ali
+    managementInterface : eth0
+    powerCycler     : powerCycler2
+    powerCyclerPort : [1, 2]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+migaloo_4002 :     # this need accessed by server 10.192.62.125
+    name    : migaloo_4002
+    os             : sonic
+    deviceType     : DUT
+    consoleIP       : 10.194.77.14
+    consolePort     : 4002
+    bmcConsoleIP    : 10.194.77.14
+    bmcConsolePort  : 4002
+    # for migaloo, switch to BMC: ctrl+u and 2, switch to CPU:ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName       : admin
+    password       : admin
+    rootUserName   : admin
+    rootPassword   : 'admin'
+    bmcUserName    : root
+    bmcPassword    : '0penBmc'
+    managementIP   : 192.168.0.142
+    managementMask : 255.255.255.0
+    platform       : ali
+    managementInterface : eth0
+    powerCycler    : powerCycler2
+    powerCyclerPort : [3, 4]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+migaloo_4003 :     # this need accessed by server 10.192.62.125
+    name    : migaloo_4003
+    os             : sonic
+    deviceType     : DUT
+    consoleIP       : 192.168.0.5
+    consolePort     : 4003
+    bmcConsoleIP    : 192.168.0.5
+    bmcConsolePort  : 4003
+    # for migaloo, switch to BMC: ctrl+u and 2, switch to CPU:ctrl+u and 1
+    keysSwitchToCpu: ["\x15", "1", "\x7f"]
+    keysSwitchToBmc: ["\x15", "2", "\x7f"]
+    userName       : admin
+    password       : admin
+    rootUserName   : admin
+    rootPassword   : 'admin'
+    bmcUserName    : root
+    bmcPassword    : '0penBmc'
+    managementIP   : 192.168.0.142
+    managementMask : 255.255.255.0
+    platform       : ali
+    managementInterface : eth0
+    powerCycler    : powerCycler2
+    powerCyclerPort : [6, 7]
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : 'ONIE:'
+    promptDiagOS    : 'sonic:'
+    promptGrub      : 'grub>'
+    promptBmc       : 'root@bmc:'
+    promptUboot     : 'Cel-boot'
+    loginPromptDiagOS : 'sonic login:'
+    loginPromptBmc  : 'bmc login:'
+PC :
+  name            : PC
+  deviceType      : server
+  platform        : ubuntu
+  username        : svt
+  password        : '1qaz!QAZsvt'
+  rootUserName    : svt
+  rootPassword    : '1qaz!QAZsvt'
+  scpUsername     : 'svt'
+  scpPassword     : '1qaz!QAZsvt'
+  managementIP    : 192.168.0.4
+  managementIPV6  : '2001:db8:0:2::2'
+  staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+  prompt          : 'svt-PowerEdge-R720'
+JENKINS :
+  name            : JENKINS
+  deviceType      : server
+  platform        : ubuntu
+  username        : svt
+  password        : '1qaz!QAZsvt'
+  rootUserName    : svt
+  rootPassword    : '1qaz!QAZsvt'
+  scpUsername     : 'svt'
+  scpPassword     : '1qaz!QAZsvt'
+  managementIP    : 192.168.0.4
+  managementIPV6  : '2001:db8:0:1::2'
+  staticIPV6      : 'fe80::ba2a:72ff:fed7:f014'
+  prompt          : 'svt-PowerEdge-R720'
+
+# if we use migaloo_4002, can uncomment the following PC and JENKINS, and comment above PC and JENKINS
+#PC :
+#    name            : ubuntu
+#    deviceType      : server
+#    platform        : ubuntu
+#    username        : root
+#    password        : '123456'
+#    rootUserName    : root
+#    rootPassword    : '123456'
+#    scpUsername     : 'root'
+#    scpPassword     : '123456'
+#    managementIP    : 192.168.0.169
+#    managementIPV6  : 'fe80::94c8:7c:cde:a334'
+#    staticIPV6      : 'fe80::94c8:7c:cde:a334'
+#    prompt          : 'root@testauto:'
+#JENKINS :
+#    name            : ubuntu
+#    deviceType      : server
+#    platform        : ubuntu
+#    username        : root
+#    password        : '123456'
+#    rootUserName    : root
+#    rootPassword    : '123456'
+#    scpUsername     : 'root'
+#    scpPassword     : '123456'
+#    managementIP    : 192.168.0.169
+#    managementIPV6  : 'fe80::94c8:7c:cde:a334'
+#    staticIPV6      : 'fe80::94c8:7c:cde:a334'
+#    prompt          : 'root@testauto:'

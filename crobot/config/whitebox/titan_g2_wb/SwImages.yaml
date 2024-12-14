@@ -1,0 +1,84 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+PSU                :
+    name:  PSU
+    hostImageDir    : /root/Titan_Jbod_G2_Lenovo/titan_g2_lenovo_2.2.2.31_b23_20230103192114
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root/titanlenovoG2/
+    imageServer     : PC
+    oldImage        :
+        0S1         : 'titan_g2_lenovo_V0202_acbel_1300w_psu.bin'
+    newImage        :
+        0S1         : 'titan_g2_lenovo_V9292_v0202_acbel_1300w_psu_flipflop.bin'
+    oldVersion      : '020200'
+    newVersion      : '929292'
+
+SES:
+    name            :  SES
+    hostImageDir    : /root/Titan-g2-wb/SES/2.1.2.31/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /root/Titan-g2-wb/SES/2.1.2.31/
+    imageServer     : PC
+    oldImage        : 'titan_g2_2.1.1.31_CombinedImage.bin'
+    newImage        : 'titan_g2_2.1.2.31_CombinedImage.bin'
+    oldVersion      : '2.1.1.31'
+    newVersion      : '2.1.2.31'
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /root/Titan-g2-wb/CPLD/V0.3_V0.3/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /root/Titan-g2-wb/CPLD/V0.3_V0.3/
+    imageServer     : PC
+    oldImage        : 'Titan_SAS4_ESM_CPLD_V0.3_0.2.bin'
+    newImage        : 'Titan_SAs4_ESM_CPLD_V0.3_V0.3.bin'
+    oldVersion      : 0.3.0.2
+    newVersion      : 0.3.0.3
+
+FAULT_IMAGE:
+    name            :  FAULT_IMAGE
+    hostImageDir    : /root/Titan-g2-wb/SES/2.1.2.31/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /root/Titan-g2-wb/SES/2.1.2.31/
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'titan_g2_2.1.2.31_FlipFlop_FaultImage.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+SDK              :
+    name:   SDK
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/SDK
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : 'gibraltar-sdk-v2.0.0.zip'
+    newImage        : 'gibraltar-sdk-v2.0.4.zip'
+    oldVersion      : '2.0.0'
+    newVersion      : '2.0.4'
+
+DIAG              :
+    name:   DIAG
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/DIAG
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : /home
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+

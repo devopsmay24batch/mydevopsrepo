@@ -1,0 +1,125 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2020-    , Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+ONIE_Installer:
+    name            :  ONIE_Installer
+    hostImageDir    : 'briggs/bsp/image/onie'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'celestica_cs8210-r0.itb'
+    newImage        : 'celestica_cs8210-r0.itb'
+    oldVersion      : '2017.11.011'
+    newVersion      : '2017.11.011'
+
+ONIE_updater:
+    name            :  ONIE_updater
+    hostImageDir    : 'briggs/bsp/image/onie'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-arm64-celestica_cs8210-r0'
+    newImage        : 'onie-updater-arm64-celestica_cs8210-r0'
+    oldVersion      : '2017.11.011'
+    newVersion      : '2017.11.011'
+
+UBOOT:
+    name            :  UBOOT
+    hostImageDir    : 'bsp/image/uboot'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root/SwImages/UBOOT
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'celestica_cs8210-boot.img'
+    oldVersion      : ''
+    newVersion      : '3.65.1'
+
+DIAGOS:
+    name            :  DIAGOS
+    hostImageDir    : 'briggs/diagos'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/mnt'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'onie-diagos-installer-arm64-celestica_cs8210-r0.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+SDK:
+    name            :  SDK
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '0.1.1'
+
+BSP_DRIVER:
+    name            :  BSP_DRIVER
+    hostImageDir    : 'briggs/bsp/driver'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/root/driver'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'driver.tar.xz'
+    oldVersion      : ''
+    newVersion      : '0.0.6'
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      :
+        SYSCPLD     : "0x0010"
+        LEDCPLD1    : "0x01"
+        LEDCPLD2    : "0x01"
+        FANCPLD     : "3"
+    newVersion      :
+        SYSCPLD     : "0x0010"
+        LEDCPLD1    : "0x01"
+        LEDCPLD2    : "0x01"
+        FANCPLD     : "3"
+
+FAN_CPLD:
+    name            :  FAN_CPLD
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/root/vmetool'
+    imageServer     : PC
+    oldImage        : 'FENGHUANG_CPLD_FAN_impl1_V03.vme'
+    newImage        : 'FENGHUANG_CPLD_FAN_impl1_V03.vme'
+    oldVersion      : '0x03'
+    newVersion      : '0x03'
+
+SYS_CPLD:
+    name            :  SYS_CPLD
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/root/vmetool'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : '0x0010'
+    newVersion      : '0x0010'

@@ -1,0 +1,16 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2021, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+# this config file used to define the cases need to run
+# the example cmd to run cases use this file: ./start_crobot.sh ali_openbmc migaloo_10002 CONFIG_FILE 1 NO_EXIT 1
+
+prefix:  ALI_
+cases: [AUTO_TC_002, AUTO_TC_003, AUTO_TC_006]
+stopCase: false

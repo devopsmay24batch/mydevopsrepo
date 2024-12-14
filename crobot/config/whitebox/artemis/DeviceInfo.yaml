@@ -1,0 +1,137 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+PC :
+    name            : PC
+    deviceType      : server
+    platform        : centos
+    username        : root
+    password        : '111111'
+    rootUserName    : root
+    rootPassword    : '111111'
+    scpUsername     : 'root'
+    scpPassword     : '111111'
+    managementIP    : 192.168.60.3
+    managementIPV6  : 'fe80::1618:77ff:fe4b:393b'
+    staticIPV6      : 'fe80::1618:77ff:fe4b:393b'
+    prompt          : 'root@localhost'
+Artemis :
+    name    : UUT
+    os      : centos
+    deviceType      : DUT
+    consoleIP       : 10.10.10.2      #Canister A BIOS serial port
+    consolePort     : 10071
+    bmcConsoleIP    : 10.10.10.2      #Canister A BMC serial port
+    bmcConsolePort  : 10072
+    keysSwitchToCpu : ["sol.sh \n\n"]
+    keysSwitchToBmc : ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root             #Canister A OS
+    rootPassword    : '111111'         #Canister A OS
+    bmcUserName     :  root
+    bmcPassword     : '0penBmc'
+    managementIP    : 10.10.10.54      #Canister A host IP
+    managementMask  : 255.255.254.0
+    platform        : whitebox
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : ['AA8']
+    poeTesters      : []
+    epsList         : []
+    promptOnie      : None
+    promptDiagOS    : ''
+    promptGrub      : Grub
+    promptBmc       : 'root@artemis:~#'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'artemis login:'
+    bmcIP           : 10.10.10.37
+    loginPromptESM  : ''
+    ESMUserName     : ''
+    ESMUserPassword : ''
+Artemis_peer :
+    name    : UUT
+    os      : centos
+    deviceType      : DUT
+    consoleIP       : 10.10.10.2      #Canister B BIOS serial port
+    consolePort     : 10075
+    bmcConsoleIP    : 10.10.10.2      #Canister B BMC serial port
+    bmcConsolePort  : 10076
+    keysSwitchToCpu : ["sol.sh \n\n"]
+    keysSwitchToBmc : ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root             #Canister B OS
+    rootPassword    : '111111'         #Canister B OS
+    bmcUserName     :  root
+    bmcPassword     : '0penBmc123'
+    managementIP    : 10.10.10.96      #Canister B host IP
+    managementMask  : 255.255.254.0
+    platform        : whitebox
+    managementInterface : eth0
+    powerCycler     : powerCycler1
+    powerCyclerPort : ['AA8']
+    poeTesters      : []
+    epsList         : []
+    promptOnie      : None
+    promptDiagOS    : ''
+    promptGrub      : Grub
+    promptBmc       : 'root@artemis:~#'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'artemis login:'
+    bmcIP           : 10.10.10.74
+    loginPromptESM  : ''
+    ESMUserName     : ''
+    ESMUserPassword : ''
+tyr_se :
+    name    : tyr_se
+    os      : centos
+    deviceType      : DUT
+    consoleIP       : 10.204.112.120
+    consolePort     : 9003
+    bmcConsoleIP    : 10.204.112.120
+    bmcConsolePort  : 9003
+    # for wedge400, switch to BMC: ctrl+l and x, switch to CPU: execute sol.sh
+    keysSwitchToCpu: ["sol.sh \n\n"]
+    keysSwitchToBmc: ["\x0c", "x"]
+    userName        : admin
+    password        : admin
+    rootUserName    : root
+    rootPassword    : '111111'
+    bmcUserName:  root
+    bmcPassword: '111111'
+    managementIP    : 10.204.113.143
+    managementMask  : 255.255.254.0
+    platform         : whitebox
+    managementInterface : enp216s0f1
+    powerCycler: powerCycler2
+    powerCyclerPort : 2
+    poeTesters      : ['poeTester1', 'poeTester2']
+    epsList          : ['eps1', 'eps2']
+    promptOnie      : ONIE:/
+    promptDiagOS    : 'root@localhost'
+    promptGrub      : Grub
+    promptBmc       : 'root@localhost'
+    loginPromptDiagOS : 'localhost login:'
+    loginPromptBmc  : 'localhost login:'
+JENKINS :
+    name            : JENKINS
+    deviceType      : server
+    platform        : ubuntu
+    username        : automationtest
+    password        : '123456'
+    rootUserName    : automationtest
+    rootPassword    : '123456'
+    scpUsername     : 'automationtest'
+    scpPassword     : '123456'
+    managementIP    : 10.204.112.37
+    managementIPV6  : 'fe80::1618:77ff:fe4b:393b'
+    staticIPV6      : 'fe80::1618:77ff:fe4b:393b'
+    prompt          : 'None'

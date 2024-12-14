@@ -1,0 +1,32 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BIOS:
+    name            :  BIOS
+    hostImageDir    : /FW/bios
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /mnt/data1/BIOS
+    imageServer     : PC
+    oldImage        : 'TSE.2.06.0000.bin'
+    newImage        : 'TSE.2.07.0000.bin'
+    oldVersion      : TSE.2.06.0000
+    newVersion      : TSE.2.07.0000
+BMC:
+    name            :  BMC
+    hostImageDir    : /FW/bmc
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /mnt/data1/BMC
+    imageServer     : PC
+    oldImage        : 'Loki2.25.1010.ima'
+    newImage        : 'Loki2.27.0011.ima'
+    oldVersion      : '2.25'
+    newVersion      : '2.27'

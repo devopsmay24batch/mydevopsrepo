@@ -1,0 +1,84 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+PSU                :
+    name:  PSU
+    hostImageDir    : /root/Titan_Jbod_G2_Lenovo/2.1.3.31/
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root/titanlenovoG2/
+    imageServer     : PC
+    oldImage        :
+        S2F         : 'titan_g2_lenovo_v04_delta_1300_psu.bin'
+    newImage        :
+        S2F         : 'titan_g2_lenovo_v05_delta_1300_psu_flipflop.bin'
+    oldVersion      : '01.04'
+    newVersion      : '01.05'
+
+SES:
+    name            :  SES
+    hostImageDir    : /root/nebulaGen2F/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /root/nebulaGen2F/
+    imageServer     : PC
+    oldImage        : ['nebula_gen2f_2.0.5.21_cfg.bin', 'nebula_gen2f_2.0.5.21_osa.bin']
+    newImage        : ['nebula_gen2f_2.0.7.21_cfg.bin', 'nebula_gen2f_2.0.7.21_osa.bin']
+    oldVersion      : ['2.0.5', '2.0.5']
+    newVersion      : ['2.0.7', '2.0.7']
+
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /home/sesfw/sesfw/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /home/test/
+    imageServer     : PC
+    oldImage        : 'Titan_PMC_CPLD_0.7_0.C.bin'
+    newImage        : 'Titan_PMC_CPLD_0.7_0.D.bin'
+    oldVersion      : 0.7.0.C
+    newVersion      : 0.7.0.D
+
+FAULT_IMAGE:
+    name            :  FAULT_IMAGE
+    hostImageDir    : /home/sesfw/sesfw/
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /home/test
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'titan_9.9.7.32_FlipFlop_FaultImage.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+SDK              :
+    name:   SDK
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/SDK
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : 'gibraltar-sdk-v2.0.0.zip'
+    newImage        : 'gibraltar-sdk-v2.0.4.zip'
+    oldVersion      : '2.0.0'
+    newVersion      : '2.0.4'
+
+DIAG              :
+    name:   DIAG
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Wedge400C/autotest/DIAG
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : /home
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+

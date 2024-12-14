@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240524 18:26:24.776" rpa="false" schemaversion="4">
+<suite id="s1" name="[MINIPACK3_E01] MINIPACK3_BSP Test" source="/home/meta-cict/arun/glow/crobot/crobot/../common/bsp/minipack3_bsp.robot">
+<kw name="Diag Connect Device" type="SETUP">
+<kw name="Diag Connect" library="bsp_lib">
+<msg timestamp="20240524 18:26:25.486" level="INFO">Opening connection to 10.204.112.160:4003 with prompt: None</msg>
+<msg timestamp="20240524 18:26:26.872" level="INFO">[?2004l[?2004h[root@localhost SDK]#</msg>
+<status status="PASS" starttime="20240524 18:26:25.486" endtime="20240524 18:26:26.872"/>
+</kw>
+<status status="PASS" starttime="20240524 18:26:25.486" endtime="20240524 18:26:26.872"/>
+</kw>
+<test id="s1-t1" name="BSP_TC_009_Online_Update_TH5_PCIE_FW_in_FBOSS" line="114">
+<kw name="Download Images" library="CommonLib" type="SETUP">
+<arg>DUT</arg>
+<arg>TH5</arg>
+<msg timestamp="20240524 18:26:26.950" level="INFO">[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]#</msg>
+<msg timestamp="20240524 18:26:27.707" level="INFO">[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# scp test@10.204.125.133:////home/automation/Auto_Test/automation/FB-Minipack3/autotest/TH5/pciefw_d5_m0_v2p11.bin /var/unidiag/firmware
+[?2004ltest@10.204.125.133's password:</msg>
+<msg timestamp="20240524 18:26:27.707" level="INFO">
+output1: [?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# scp test@10.204.125.133:////home/automation/Auto_Test/automation/FB-Minipack3/autotest/TH5/pciefw_d5_m0_v2p11.bin /var/unidiag/firmware
+[?2004ltest@10.204.125.133's password:
+</msg>
+<msg timestamp="20240524 18:26:28.293" level="INFO">pciefw_d5_m0_v2p11.bin                          0%    0     0.0KB/s   --:-- ETApciefw_d5_m0_v2p11.bin                        100%   12KB   2.1MB/s   00:00    
+[?2004h[root@localhost SDK]#</msg>
+<msg timestamp="20240524 18:26:28.294" level="INFO">
+Successfully copy file: pciefw_d5_m0_v2p11.bin
+</msg>
+<msg timestamp="20240524 18:26:28.928" level="INFO">[?2004l[?2004h[root@localhost SDK]# 
+[?2004l[?2004h[root@localhost SDK]# scp test@10.204.125.133:////home/automation/Auto_Test/automation/FB-Minipack3/autotest/TH5/pciefw_d5_m0_v2p11.bin /var/unidiag/firmware
+[?2004l</msg>
+<msg timestamp="20240524 18:26:29.141" level="INFO">test@10.204.125.133's password:</msg>
+<msg timestamp="20240524 18:26:29.164" level="FAIL">Copy file pciefw_d5_m0_v2p11.bin through scp failed!</msg>
+<status status="FAIL" starttime="20240524 18:26:26.873" endtime="20240524 18:26:29.165"/>
+</kw>
+<kw name="Clean Images" library="CommonLib" type="TEARDOWN">
+<arg>DUT</arg>
+<arg>TH5</arg>
+<msg timestamp="20240524 18:26:29.232" level="INFO">Permission denied, please try again.</msg>
+<errors>
+<msg timestamp="20240524 18:26:29.404" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>

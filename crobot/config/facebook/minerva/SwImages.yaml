@@ -1,0 +1,377 @@
+
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BMC:
+    name            :  BMC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/BMC # the image location on the server
+    isAutoBuild     : true             # it is auto build, Jenkins task will put the new built images under hostImageDir
+    imageInfoFile   : ImageInfo.yaml   # for the auto build, Jenkins task will update the fw information in this file, and CAP script will parse fw information from this file.
+    localImageDir   : /mnt/data1/BMC   # the image location on the test unit
+    imageServer     : PC               # the server contain the images, it is defined in DeviceInfo.yaml
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : 'v0.30'
+    newVersion      : 'v0.30'
+BIOS:
+    name            :  BIOS
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/BIOS
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : none       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : /mnt/data1/BIOS
+    imageServer     : PC
+    oldImage        : 'XG1_3A09.bin'
+    newImage        : 'XG1_3A10.bin'
+    oldVersion      : NLD01
+    newVersion      : NLD01
+CPLD:
+    name            :  CPLD
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/CPLD
+    imageServer     : PC
+    oldImage        :
+        fcm         : 'WEDGE400C_FAN_CPLD_v4p1.jed'
+        scm         : 'WEDGE400C_SCM_CPLD_vfpf.jed'
+        smb         : 'WEDGE400C_SMB_CPLD_v2p2.jed'
+        pwr         : 'WEDGE400C_PWR_CPLD_v2p3.jed'
+    newImage        :
+        fcm         : 'WEDGE400C_FAN_CPLD_v4p2.jed'
+        scm         : 'WEDGE400C_SCM_CPLD_v4p0.jed'
+        smb         : 'WEDGE400C_SMB_CPLD_v2p4.jed'
+        pwr         : 'WEDGE400_2_PWR_CPLD_v2p4.jed'
+    oldVersion      :
+        fcm         : '4.1'
+        scm         : '15.15'
+        smb         : '2.2'
+        pwr         : '2.3'
+    newVersion      :
+        fcm         : '4.2'
+        scm         : '4.0'
+        smb         : '2.4'
+        pwr         : '2.4'
+BIC:
+    name            :  BIC
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/BIC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/BIC
+    imageServer     : PC
+    oldImage        : 'xg1_snowflake_109.bin'
+    newImage        : 'xg1_snowflake_111.bin'
+    oldVersion      : 'v1.09'
+    newVersion      : 'v1.11'
+FPGA                :
+    name:  FPGA
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/FPGA
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'mp3_dom_v0.26.bit'
+    newImage        : 'mp3_dom_v0.29.bit'
+    oldVersion      :
+        DOMFPGA1    : 'v0.26'
+        DOMFPGA2    : 'v0.26'
+    newVersion      :
+        DOMFPGA1    : 'v0.29'
+        DOMFPGA2    : 'v0.29'
+TH3                 :
+    name:  TH3
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/TH3
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TH3
+    imageServer     : PC
+    oldImage        : 'TH3_PCIE_FW_02_05'
+    newImage        : 'pciefw_2.06.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.5'
+        PCIe FW version       : 'D102_08'
+    newVersion      :
+        PCIe FW loader version : '2.6'
+        PCIe FW version       : 'D102_0A'
+TH5                 :
+    name:  TH5
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/TH5
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'pciefw_d5_m0_v2p11.bin'
+    newImage        : 'pciefw_d5_m0_v2p11.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.11'
+        PCIe FW version       : '2_11'
+    newVersion      :
+        PCIe FW loader version : '2.11'
+        PCIe FW version       : '2_11'
+UDEV              :
+    name:  UDEV
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : 'v1.1.0'
+    newVersion      : 'v1.1.1'
+BSP                 :
+    name:  BSP
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/BSP
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/var/unidiag/firmware'
+    oldlocalImageDir   : '/root/BSP_v0.0.7'
+    newlocalImageDir   : '/root/BSP_v1.5.0'
+    imageServer     : PC
+    oldImage        : 'fboss-bsp_minerva_bsp_x86_evt_0.0.7.tar'
+    oldImageZip     : 'minerva_bsp_x86_0.0.7.zip'
+    newImage        : 'fboss-bsp_minerva_fboss_bsp_dvt1_1.5.0.tar'
+    newImageZip     : 'minerva_fboss_bsp_dvt1_1.5.0.zip'
+    spiUtilScript   : 'spi-utils.sh'
+    weUtilScript    : 'weutil'
+    weUtilJson      : 'weutil.json'
+    libicuuc        : 'libicuuc.so.67'
+    libicudata      : 'libicudata.so.67'
+    libicui18n      : 'libicui18n.so.67'
+    oldVersion      : 'v1.5.0'
+    newVersion      : 'v1.5.0'
+OOB                 :
+    name:  OOB
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/OOB
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : '6321_Minerva_v0_0_3'
+    newImage        : '6321_Minerva_v0_0_3'
+    oldVersion      : 'v1.0'
+    newVersion      : 'v1.0'
+IOB                 :
+    name:  IOB
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/FPGA
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'mp3_iob_v0.35.bit'
+    newImage        : 'mp3_iob_v0.38.bit'
+    oldVersion      : 'v0.35'
+    newVersion      : 'v0.38'
+SMB                 :
+    name:  SMB
+    hostImageDir    : '/home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'j3_th5_smb_cpld1_v1.2.6.bit'
+    newImage        : 'j3_th5_smb_cpld1_v1.3.0_ugd.bit'
+    oldVersion      : 'v1.2.6'
+    newVersion      : 'v1.3.0'
+SMB1                 :
+    name:  SMB1
+    hostImageDir    : '/home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'j3_th5_smb_cpld1_v1.2.6.bit'
+    newImage        : 'j3_th5_smb_cpld1_v1.3.0_ugd.bit'
+    oldVersion      : 'v1.2.6'
+    newVersion      : 'v1.3.0'
+SMB2                 :
+    name:  SMB2
+    hostImageDir    : '/home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'th5_smb_cpld2_v1.2.3.bit'
+    newImage        : 'th5_smb_cpld2_v1.3.0_ugd.bit'
+    oldVersion      : 'v1.2.3'
+    newVersion      : 'v1.3.0'
+PWR                 :
+    name:  PWR
+    hostImageDir    : '/home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'th5_pwr_cpld_v1.2.9.bit'
+    newImage        : 'j3_th5_pwr_cpld_v1.3.0_gld.bit'
+    oldVersion      : 'v1.2.9'
+    newVersion      : 'v1.1.0'
+MCB                 :
+    name:  MCB
+    hostImageDir    : '/home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'mp3_mcb_ugd_v1.3.0.bit'
+    newImage        : 'mp3_mcb_v1.3.1.bit'
+    oldVersion      : 'v1.3.0'
+    newVersion      : 'v1.3.1'
+SCM                 :
+    name:  SCM
+    hostImageDir    : '/home/automation/Auto_Test/automation/FB-Minerva/autotest/CPLD'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/var/unidiag/firmware'
+    imageServer     : PC
+    oldImage        : 'mp3_scm_ugd_v1.3.0.bit'
+    newImage        : 'mp3_scm_v1.3.1.bit'
+    oldVersion              :
+        Bridge-IC Version             : 'v1.09'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A07'
+        CPLD Version                  : 'v1.3.0'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+    newVersion              :
+        Bridge-IC Version             : 'v1.11'
+        Bridge-IC Bootloader Version  : 'v1.10'
+        BIOS Version                  : 'XG1_3A09'
+        CPLD Version                  : 'v1.3.1'
+        ME Version                    : '3.0.3.45'
+        PVCCIN VR Version             : '0x54c8, 0xe9d6'
+        DDRAB VR Version              : '0xb41b, 0xe66c'
+        P1V05 VR Version              : '0x54c8, 0xe9d6'
+TPM                 :
+    name:  TPM
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/TPM
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/TPM
+    imageServer     : PC
+    oldImage        : 'TPM2_Test_Scripts_for_v3.0.tar.gz'
+    newImage        : 'TPM2_Test_Scripts_for_v7.85.tar.gz'
+    oldVersion      : '3.0'
+    newVersion      : '7.85'
+OS                  :
+    name:   OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '8.1.1911'
+KERNEL              :
+    name:   KERNEL
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '5.2.21'
+PSU                :
+    name:  PSU
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/PSU
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /mnt/data1/PSU
+    imageServer     : PC
+    oldImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v3.0a_CRC_8264_18Feb2020_JC.bin'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.0a_CRC_50B2_18Feb2020_JC.bin'
+    newImage        :
+        pri         : 'Delta_Dragon_M_FB1500W_MP_Pri_APP_only_v4.0a_CRC_4D57_26Mar2019_HZ.BIN'
+        sec         : 'Delta_Dragon_M_FB1500W_MP_Sec_APP_only_v3.2a_CRC_61E9_18Feb2020_JC.bin'
+    oldVersion      :
+        PRI_FW_VER  : '3.0'
+        SEC_FW_VER  : '3.0'
+    newVersion      :
+        PRI_FW_VER  : '4.0'
+        SEC_FW_VER  : '3.2'
+DIAG              :
+    name:   DIAG
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/DIAG
+    isAutoBuild     : true
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : /home
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+DIAG_OS              :
+    name:   DIAG_OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : 'v1.1.0'
+    newVersion      : 'v1.0.4'
+SDK              :
+    name:   SDK
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/SDK
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /root
+    imageServer     : PC
+    oldImage        : 'gibraltar-sdk-v2.0.0.zip'
+    newImage        : 'gibraltar-sdk-v2.0.4.zip'
+    oldVersion      : 'CLS_SDK_APP_2.0.0'
+    newVersion      : 'CLS_SDK_APP_1.3.1'
+CIT                 :
+    name:  CIT
+    hostImageDir    : /home/automation/Auto_Test/automation/FB-Minerva/autotest/CIT
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /mnt/data1/CIT
+    imageServer     : PC
+    oldImage        : 'cit.tar'
+    newImage        : 'cit.tar'
+    oldVersion      : ''
+    newVersion      : ''
+I210              :
+    name:   I210
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : 'v3.30'
+    newVersion      : 'v3.30'
+SEASTONE_BIOS:
+        name: SEASTONE_BIOS
+        hostImageDir: ''
+        isAutoBuild  : false
+        imageInfoFile : none
+        localImageDir : ''
+        imageServer  : ''
+        oldImage        : 'Seastone2V2.2.0.0.bin'
+        newImage        : 'Seastone2V2.2.0.1.bin'
+        oldVersion      : XG1_3A09
+        newVersion   :
+                clpd_image  : 'Seastone2_V2_EVT_B_V1.6_C_V0.7_SW1_V1.0_SW2_V1.0.vme'
+                bmc_image  : 'R4039-DS3000-2.00.00.ima'
+                memtest_image :  'memtest86-usb.img'
+                Afuefix64_file : 'AfuEfix64.efi'
+                afulnx_64_image : 'afulnx_64'
+                stress_file : 'stress'
+                cel_diag_image: 'cel_diag-seastone2v2.v2.0.0-x86.deb'

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=en>
+  <meta content="text/html; charset=utf-8">
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Options Select</title>
+  <style>
+     div { margin-left:10%;
+           margin-top: 2%}
+  </style>
+<body>
+<p>{{descriptions}}</p>
+<div>
+	<span>Please select from the options:</span>
+</div>
+<div>
+<form method="POST" action=".">
+   <table>
+        <tr>
+	  {% for option in options %}
+	  <td><input type="radio" id="selected" name="selected" value="{{option}}"/>{{option}}</td>
+	  {% endfor %}
+	</tr>
+	<tr>
+	   <td></td><td><input type="submit" value="Ok" onclick=""></td>
+	</tr>
+   </table>
+</form>
+</div>
+</body>
+</html>

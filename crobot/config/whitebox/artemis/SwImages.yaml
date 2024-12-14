@@ -1,0 +1,192 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2019-2020, Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+OS                  :
+    name:   OS
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+KERNEL              :
+    name:   KERNEL
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+I210              :
+    name:   I210
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : ''
+    imageServer     : ''
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+Artemis_A_BMC     :
+    name:   Artemis_A_BMC
+    hostImageDir    : /root/Artemis-FW/BMC
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/BMC
+    imageServer     : PC #ESMA
+    newImage        : 'artemisBMCV2.12.0.mtd'
+    oldImage        : 'artemisBMCV2.11.0.mtd'
+    newVersion      : '2.12'
+    oldVersion      : '2.11'
+
+Artemis_B_BMC     :
+    name: Artemis_B_BMC
+    hostImageDir: /root/Artemis-FW/BMC
+    isAutoBuild: false
+    imageInfoFile: none
+    localImageDir: /root/Artemis-FW/BMC
+    imageServer: PC #ESMA
+    newImage: 'artemisBMCV2.12.0.mtd'
+    oldImage: 'artemisBMCV2.11.0.mtd'
+    newVersion: '2.12'
+    oldVersion: '2.11'
+
+Artemis_A_CPLD    :
+    name:   Artemis_A_CPLD
+    hostImageDir    : /root/Artemis-FW/CPLD
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/CPLD
+    imageServer     : PC
+    newImage        : 'Artemis_CPLD_1340.jed'
+    oldImage        : 'Artemis_CPLD_1330.jed'
+    newVersion      : ['0x13', '0x40']
+    oldVersion      : ['0x13', '0x30']
+
+Artemis_B_CPLD    :
+    name:   Artemis_B_CPLD
+    hostImageDir    : /root/Artemis-FW/CPLD
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/CPLD
+    imageServer     : PC1
+    newImage        : 'Artemis_CPLD_1340.jed'
+    oldImage        : 'Artemis_CPLD_1330.jed'
+    newVersion      : ['0x13', '0x40']
+    oldVersion      : ['0x13', '0x30']
+
+Artemis_A_BIOS     :
+    name:   Artemis_A_BIOS
+    hostImageDir    : /root/Artemis-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/BIOS
+    imageServer     : PC
+    newImage        : 'ART.2.04.01.FD'
+    oldImage        : 'ART.2.03.01.FD'
+    newVersion      : 'ART.2.04.01'
+    oldVersion      : 'ART.2.03.01'
+
+Artemis_B_BIOS     :
+    name:   Artemis_B_BIOS
+    hostImageDir    : /root/Artemis-FW/BIOS
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/BIOS
+    imageServer     : PC1
+    newImage        : 'ART.2.04.01.FD'
+    oldImage        : 'ART.2.03.01.FD'
+    newVersion      : 'ART.2.04.01'
+    oldVersion      : 'ART.2.03.01'
+
+Artemis_A_PSU    :
+    name:   Artemis_FW_PSU_A
+    hostImageDir    : /root/Artemis-FW/PSU
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/psu
+    imageServer     : PC
+    newImage        : '_TDPS2400HBA_SecFW_V010.bin'
+    oldImage        : '_TDPS2400HBA_SecFW_V0E0.bin'
+    newVersion      : '0x03 0x0a'
+    oldVersion      : '0x03 0x0a'
+
+Artemis_B_PSU    :
+    name:   Artemis_FW_PSU_B
+    hostImageDir    : /root/Artemis-FW/PSU
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/PSU
+    imageServer     : PC1
+    newImage        : '_TDPS2400HBA_SecFW_V010.bin'
+    oldImage        : '_TDPS2400HBA_SecFW_V0E0.bin'
+    newVersion      : '0x03 0x0a'
+    oldVersion      : '0x03 0x0a'
+
+Artemis_A_Retimer   :
+    # TODO
+    name:   Artemis_FW_PSU_A
+    hostImageDir    : /root/Artemis-FW/PSU
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/psu
+    imageServer     : PC
+    oldImage        : '_TDPS2400HBA_SecFW_V0E0.bin'
+    newImage        : '_TDPS2400HBA_SecFW_V010.bin'
+    oldVersion      : '0x03 0x0a'
+    newVersion      : '0x03 0x0a'
+
+Artemis_B_Retimer   :
+    # TODO
+    name:   Artemis_FW_PSU_B
+    hostImageDir    : /root/Artemis-FW/PSU
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : /root/Artemis-FW/PSU
+    imageServer     : PC1
+    oldImage        : '_TDPS2400HBA_SecFW_V0E0.bin'
+    newImage        : '_TDPS2400HBA_SecFW_V010.bin'
+    oldVersion      : '0x03 0x0a'
+    newVersion      : '0x03 0x0a'
+
+
+SDK              :
+    name:   SDK
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''
+
+DIAG              :
+    name:   DIAG
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : ''

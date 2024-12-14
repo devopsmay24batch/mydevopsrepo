@@ -1,0 +1,337 @@
+###############################################################################
+# LEGALESE:   "Copyright (C) 2020-    , Celestica Corp. All rights reserved." #
+#                                                                             #
+# This source code is confidential, proprietary, and contains trade           #
+# secrets that are the sole property of Celestica Corp.                       #
+# Copy and/or distribution of this source code or disassembly or reverse      #
+# engineering of the resultant object code are strictly forbidden without     #
+# the written consent of Celestica Corp.                                      #
+#                                                                             #
+###############################################################################
+BMC:
+    name            :  BMC
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/BMC'
+    isAutoBuild     : true
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp/BMC'
+    imageServer     : PC
+    oldImage        : 'flash-obmc-cl_v1.1.9'
+    newImage        : 'flash-obmc-cl_v1.2.0'
+    oldVersion      : '1.1.9'
+    newVersion      : '1.2.0'
+
+DIAG:
+    name            :  DIAG
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/DIAG'
+    isAutoBuild     : true
+    imageInfoFile    : ImageInfo.yaml
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R3174-J0005-01_Diag-1.1.7.deb'
+    oldVersion      : ''
+    newVersion      : '1.1.7'
+
+SDK              :
+    name:   SDK
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/SDK'
+    isAutoBuild     : true
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp/SDK'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'R3174-J0005-01_v1.1.0_Migaloo_SDK.zip'
+    oldVersion      : ''
+    newVersion      : '1.1.0'
+
+BASE_CPLD:
+    name            :  BASE_CPLD
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : 'Migaloo_CTRL_CPLD_V0E_20210311.vme'
+    newImage        : 'Migaloo_CTRL_CPLD_V0F_20210729.vme'
+    oldVersion      : '0x0e'
+    newVersion      : '0x0f'
+
+COME_CPLD:
+    name            :  COME_CPLD
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : 'come_cpld_v13.vme'
+    newImage        : 'migaloo_come_cpld_v14.vme'
+    oldVersion      : '0x13'
+    newVersion      : '0x14'
+
+SWITCH_CPLD:
+    name            :  SWITCH_CPLD
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : 'Migaloo_sw_cpld_v0c.vme'
+    newImage        : 'Migaloo_PORT_CPLD_V0D_20210308.vme'
+    oldVersion      : '0x0c'
+    newVersion      : '0x0d'
+
+FAN_CPLD:
+    name            :  FAN_CPLD
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : 'fan_cpld_v01.vme'
+    newImage        : 'migaloo_fan_cpld_v00.vme'
+    oldVersion      : '0x01'
+    newVersion      : '0x00'
+
+FAN_CPLD_REFRESH:
+    name            :  FAN_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Migaloo_FAN_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+BASE_CPLD_REFRESH:
+    name            :  BASE_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Migaloo_CTRL_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+CPU_CPLD_REFRESH:
+    name            :  CPU_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Migaloo_COMe_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+SWITCH_CPLD_REFRESH:
+    name            :  SWITCH_CPLD_REFRESH
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/CPLD'
+    isAutoBuild     : false
+    imageInfoFile    : none
+    localImageDir   : '/tmp/CPLD'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'Migaloo_PORT_CPLD_REFRESH.vme'
+    oldVersion      : ''
+    newVersion      : ''
+
+DIAGOS:
+    name            :  DIAGOS
+    hostImageDir    : 'migaloo/image/DIAGOS'
+    isAutoBuild     : false
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'sonic-broadcom_1.2.3.bin'
+    newImage        : 'sonic-broadcom_1.2.4.bin'
+    oldVersion      : '1.2.3'
+    newVersion      : '1.2.4'
+
+ONIE_INSTALLER:
+    name            :  ONIE_INSTALLER
+    hostImageDir    : 'migaloo/image/ONIE'
+    isAutoBuild     : false
+    imageInfoFile    : ImageInfo.yaml
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-recovery-x86_64-alibaba_as24-128d-cl-r0.iso'
+    newImage        : 'onie-recovery-x86_64-alibaba_as24-128d-cl-r0.iso'
+    oldVersion      : '2019.02.01.0.0.1'
+    newVersion      : '2019.02.01.0.0.1'
+
+ONIE_UPDATER:
+    name            :  ONIE_UPDATER
+    hostImageDir    : 'migaloo/image/ONIE'
+    isAutoBuild     : false      # it is not auto build, user need put the images under hostImageDir manually, and update the fw information in this file
+    imageInfoFile    : ImageInfo.yaml       # it is not auto build, no imageInfoFile, CAP script will use the information defined in this file
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'onie-updater-x86_64-alibaba_as24-128d-cl-r0'
+    newImage        : 'onie-updater-x86_64-alibaba_as24-128d-cl-r0'
+    oldVersion      : '2019.02.01.0.0.1'
+    newVersion      : '2019.02.01.0.0.1'
+
+FPGA:
+    name            :  FPGA
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/FPGA'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'migaloo_fpga_top_PRIMARY.bin'
+    newImage        : 'Migaloo_FPGA_PRIMARY_V0000_0006_20210308.bin'
+    oldVersion      : '0x00000005'
+    newVersion      : '0x00000006'
+
+FPGA_MULTBOOT:
+    name            :  FPGA_MULTBOOT
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/FPGA'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp'
+    imageServer     : PC
+    oldImage        : 'migaloo_fpga_top_MULTBOOT_for_bmc.bin'
+    newImage        : 'Migaloo_FPGA_MULTBOOT_For_BMC_Online_V0000_0006_20210308.bin'
+    oldVersion      : '0x00000005'
+    newVersion      : '0x00000006'
+
+BIOS:
+    name            :  BIOS
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/BIOS'
+    isAutoBuild     : true
+    imageInfoFile   : ImageInfo.yaml
+    localImageDir   : '/tmp/BIOS'
+    imageServer     : PC
+    oldImage        : 'Ali_Shamu_Migaloo_B2C.1.00.06.bin'
+    newImage        : 'AS14-40D-F.1.00.07.bin'
+    oldVersion      : '1.00.06'
+    newVersion      : '1.00.07'
+
+AFU_TOOL:
+    name            :  AFU_TOOL
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'AfuEfix64.efi'
+    oldVersion      : ''
+    newVersion      : ''
+
+TH4_PCIE_FLASH      :
+    name            : TH4_PCIE_FLASH
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : /var/lib/tftpboot/migaloo/image/TH4
+    imageServer     : PC
+    oldImage        : 'pciefw-r5-m7.bin'
+    newImage        : 'pciefw-r5-m7_V2.9.bin'
+    oldVersion      :
+        PCIe FW loader version : '2.8001'
+        PCIe FW version       : 'E001_09'
+    newVersion      :
+        PCIe FW loader version : '2.9'
+        PCIe FW version       : 'D000_05'
+
+BIOS_FRU_EEPROM_INTERNAL :
+    name            :  BIOS_FRU_EEPROM_INTERNAL
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'migaloo-internal-09.bin'
+    oldVersion      : ''
+    newVersion      : '0.9'
+
+BCM5387             :
+    name            :  BCM5387
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BCM5387'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'bcm5387_fishbone48_new.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+TH4                 :
+    name            :  TH4
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/TH4'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'th4.bin'
+    oldVersion      : ''
+    newVersion      : ''
+
+ME_FIRMWARE :
+    name            : ME_FIRMWARE
+    hostImageDir    : ''
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : ''
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : ''
+    oldVersion      : ''
+    newVersion      : '3.0.3.59'
+
+BDX_DE_LINUX :
+    name            : BDX_DE_LINUX
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'BDX_DE_Linux_2.0.zip'
+    oldVersion      : ''
+    newVersion      : ''
+
+RU :
+    name            : RU
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/BIOS/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'RU_EFI.zip'
+    oldVersion      : ''
+    newVersion      : ''
+
+POWER_IMAGE_LOADLINE :
+    name            : RU
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/powerImage/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'loadlineImage_20210609.txt'
+    oldVersion      : ''
+    newVersion      : ''
+
+POWER_IMAGE_NO_LOADLINE :
+    name            : RU
+    hostImageDir    : '/var/lib/tftpboot/migaloo/image/TOOLS'
+    isAutoBuild     : false
+    imageInfoFile   : none
+    localImageDir   : '/tmp/powerImage/'
+    imageServer     : PC
+    oldImage        : ''
+    newImage        : 'no_loadlineImage_20201023.txt'
+    oldVersion      : ''
+    newVersion      : ''
